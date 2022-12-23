@@ -2,7 +2,7 @@ import React from 'react';
 import BussinessLogin from "./pages/BussinessLogin";
 import BussinessSignUp from "./pages/BussinessSignUp";
 import Home from './pages/Home'
-import { BrowserRouter, Route, Routes,Navigate  } from 'react-router-dom';
+import { HashRouter, Route, Routes,Navigate  } from 'react-router-dom';
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import './App.css';
@@ -20,7 +20,7 @@ function App() {
   };
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
          <Route path="/SignUp" element={<BussinessSignUp/>}/>
          <Route path="/Login" element={<BussinessLogin/>}/>
@@ -29,7 +29,7 @@ function App() {
                 <Home />
               </ProtectedRoute>}/>
          </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

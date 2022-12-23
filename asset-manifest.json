@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/abhiTek1/ChatApp/static/css/main.2362e2f4.css",
-    "main.js": "/abhiTek1/ChatApp/static/js/main.6509eea9.js",
-    "index.html": "/abhiTek1/ChatApp/index.html",
-    "main.2362e2f4.css.map": "/abhiTek1/ChatApp/static/css/main.2362e2f4.css.map",
-    "main.6509eea9.js.map": "/abhiTek1/ChatApp/static/js/main.6509eea9.js.map"
+    "main.css": "/ChatApp/static/css/main.2362e2f4.css",
+    "main.js": "/ChatApp/static/js/main.49b61839.js",
+    "index.html": "/ChatApp/index.html",
+    "main.2362e2f4.css.map": "/ChatApp/static/css/main.2362e2f4.css.map",
+    "main.49b61839.js.map": "/ChatApp/static/js/main.49b61839.js.map"
   },
   "entrypoints": [
     "static/css/main.2362e2f4.css",
-    "static/js/main.6509eea9.js"
+    "static/js/main.49b61839.js"
   ]
 }

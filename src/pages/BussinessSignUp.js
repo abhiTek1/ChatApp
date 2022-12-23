@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, storage } from "../Firebase";
 import {db  } from "../Firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { collection, addDoc } from "firebase/firestore";
+import { setDoc ,doc } from "firebase/firestore";
 import "./BussinessSignUp.css";
 import Add from '../img/addAvatar.png'
 
@@ -38,7 +38,7 @@ function SignUp() {
               photoURL: downloadURL,
             });
             //create user on firestore
-            await addDoc(collection(db, "users"), {
+            await setDoc(doc(db, "users", res.user.uid), {
               uid: res.user.uid,
               displayName,
               email,
@@ -46,7 +46,7 @@ function SignUp() {
             });
 
             //create empty user chats on firestore
-            await addDoc(collection(db, "userChats"), {});
+            await setDoc(doc(db, "userChats", res.user.uid), {});
             navigate("/");
           } catch (err) {
             console.log(err);

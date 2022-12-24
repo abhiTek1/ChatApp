@@ -4,11 +4,11 @@ import {
   query,
   where,
   getDocs,
+  setDoc,
   doc,
   updateDoc,
   serverTimestamp,
   getDoc,
-  setDoc,
 } from "firebase/firestore";
 import { db } from "../Firebase";
 import { AuthContext } from "../context/AuthContext";
@@ -46,7 +46,7 @@ const Search = () => {
         ? currentUser.uid + user.uid
         : user.uid + currentUser.uid;
     try {
-      const res = await getDoc(doc(db, "chats", combinedId ));
+      const res = await getDoc(doc(db, "chats", combinedId));
 
       if (!res.exists()) {
         //create a chat in chats collection
@@ -62,7 +62,7 @@ const Search = () => {
           [combinedId + ".date"]: serverTimestamp(),
         });
 
-        await updateDoc(doc(db, "userChats",  user.uid), {
+        await updateDoc(doc(db, "userChats", user.uid), {
           [combinedId + ".userInfo"]: {
             uid: currentUser.uid,
             displayName: currentUser.displayName,
@@ -71,9 +71,7 @@ const Search = () => {
           [combinedId + ".date"]: serverTimestamp(),
         });
       }
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
 
     setUser(null);
     setUsername("")
@@ -91,7 +89,7 @@ const Search = () => {
       </div>
       {err && <span>User not found!</span>}
       {user && (
-        <div className="userChat" onClick={()=>handleSelect()}>
+        <div className="userChat" onClick={handleSelect}>
           <img src={user.photoURL} alt="" />
           <div className="userChatInfo">
             <span>{user.displayName}</span>

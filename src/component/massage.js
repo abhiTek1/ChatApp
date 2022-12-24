@@ -1,6 +1,8 @@
+
 import React, { useContext, useEffect, useRef } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
+ 
 
 const Message = ({ message }) => {
   const { currentUser } = useContext(AuthContext);
@@ -12,6 +14,7 @@ const Message = ({ message }) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   }, [message]);
 
+  
   return (
     <div
       ref={ref}
@@ -26,7 +29,7 @@ const Message = ({ message }) => {
           }
           alt=""
         />
-        <span>just now</span>
+        <span>{message.date.toDate().toTimeString().slice(0,8)}</span>
       </div>
       <div className="messageContent">
         <p>{message.text}</p>

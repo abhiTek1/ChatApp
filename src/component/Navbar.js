@@ -7,7 +7,7 @@ import { AuthContext } from "../context/AuthContext";
 const Navbar = () => {
   const { currentUser } = useContext(AuthContext);
   return (
-    <div className='Navbar'>
+    <div className='  Navbar'>
     <span className='logo'>Web Chat</span>
     <div className='user'>
     <img src={currentUser.photoURL} alt=''/>

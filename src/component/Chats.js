@@ -32,7 +32,7 @@ const Chats = () => {
     <div className="chats">
       {Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date).map((chat) => (
         <div
-          className="userChat"
+          className="container"
           key={chat[0]}
           onClick={() => handleSelect(chat[1].userInfo)}
         >

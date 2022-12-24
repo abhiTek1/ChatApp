@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import Img from "../img/img.png";
+import Ab from "../img/AbhiPic.jpeg";
 import Attach from "../img/attach.png";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
@@ -17,12 +18,22 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 const Input = () => {
   const [text, setText] = useState("");
   const [img, setImg] = useState(null);
+  const [img1, setImg1] = useState(null);
 
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
+  const photo=[Img,Ab]
+function funset()
+{
+  console.log("img set")
+  // setText(Ab)
+  setImg1(Ab)
+  
+  // handleSend()
+}
 
   const handleSend = async () => {
-    if (img) {
+    if (img ) {
       const storageRef = ref(storage, uuid());
 
       const uploadTask = uploadBytesResumable(storageRef,img);
@@ -37,6 +48,7 @@ const Input = () => {
               messages: arrayUnion({
                 id: uuid(),
                 text,
+               
                 senderId: currentUser.uid,
                 date: Timestamp.now(),
                 img: downloadURL,
@@ -45,7 +57,37 @@ const Input = () => {
           });
         }
       );
-    } else {
+    } 
+    // else if (img1 ) {
+    //   // console.log("img",img1)
+    //   const storageRef1 = ref(storage, uuid());
+
+    //   const uploadTask1 = uploadBytesResumable(storageRef1,img1);
+
+    //   uploadTask1.on(
+    //     (error) => {
+    //       //TODO:Handle Error
+    //     },
+    //     () => {
+    //       getDownloadURL(uploadTask1.snapshot.ref).then(async (downloadURL) => {
+    //         await updateDoc(doc(db, "chats", data.chatId), {
+    //           messages: arrayUnion({
+    //             id: uuid(),
+    //             text,
+               
+    //             senderId: currentUser.uid,
+    //             date: Timestamp.now(),
+    //             img1: downloadURL,
+    //           }),
+    //         });
+    //       });
+    //     }
+    //   );
+    // } 
+
+   
+    else {
+      
       await updateDoc(doc(db, "chats", data.chatId), {
         messages: arrayUnion({
           id: uuid(),
@@ -82,7 +124,7 @@ const Input = () => {
         value={text}
       />
       <div className="send">
-        <img src={Attach} alt="" />
+        <img src={Attach} alt="" onClick={()=>funset()} />
         <input
           type="file"
           style={{ display: "none" }}

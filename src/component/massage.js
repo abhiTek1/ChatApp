@@ -26,11 +26,12 @@ const Message = ({ message }) => {
           }
           alt=""
         />
-        <span>just now</span>
+        <span>{message.date.toDate().toTimeString().slice(0,8)}</span>
       </div>
       <div className="messageContent">
         <p>{message.text}</p>
         {message.img && <img src={message.img} alt="" />}
+    
       </div>
     </div>
   );

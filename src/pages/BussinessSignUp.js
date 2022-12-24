@@ -62,27 +62,28 @@ function SignUp() {
   }
   return (
     <div className="SignUp">
-      <header className="SignUp-header">
+      <header className="container">
+        
+        <form className="form" onSubmit={handleSubmit}>
         <div className="h1">
           <h1>Sign Up</h1>
           <h3> Already have an account? <Link to="/Login"><span>Log In</span></Link> </h3>
           <b className="Error">{err }</b>
           <b className="Error">{loading }</b>
         </div>
-        <form className="form" onSubmit={handleSubmit}>
           <div className="mb-3">
             <label for="exampleInputEmail1" className="form-label"> FullName </label>
-            <input required type="text" className="form-control" id="exampleInputEmail1"></input>
+            <input required type="text" className="form-control" id="exampleInputEmail1" placeholder="Eg : Rajesh Nagar"></input>
           </div>
           <div className="mb-3">
-            <label for="exampleInputEmail1" className="form-label"> Email Address</label>
-            <input required type="email"  className="form-control"  id="exampleInputEmail1" ></input>
+            <label for="exampleInputEmail1" className="form-label"> Email </label>
+            <input required type="email"  className="form-control"  id="exampleInputEmail1" placeholder="Eg : email@gmail.com" ></input>
           </div> 
           <div className="mb-3">
             <label for="exampleInputPassword1" className="form-label">
               Password
             </label>
-            <input required
+            <input required placeholder="Eg :@321#Abc*"
               type="password"
               className="form-control"
               id="exampleInputPassword1"

@@ -24,21 +24,21 @@ function Login() {
      
   return (
     <div className="Login">
-      <header className="Login-header">
+      <header className="container">
+     
+      <form className="form" onSubmit={handleSubmit}>
       <div className="h1"><h1>Sign In</h1>
       <h3>Don't have an account?<Link to="/SignUp"><span>Sign Up</span></Link></h3>
       <b className="Error">{err}</b>
       </div>
-      <form className="form" onSubmit={handleSubmit}>
-
 <div className="mb-3">
-    <label for="exampleInputEmail1" className="form-label">Email address</label>
-    <input type="email" className="form-control" id="exampleInputEmail1"></input>    
+    <label for="exampleInputEmail1" className="form-label" >Email</label>
+    <input type="email" className="form-control" id="exampleInputEmail1" placeholder="Eg : email@gmail.com"></input>    
 </div>
  
 <div className="mb-3">
     <label for="exampleInputPassword1" className="form-label">Password</label>
-    <input type="password" className="form-control" id="exampleInputPassword1"></input>  
+    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Eg :@R321#*" ></input>  
 </div>
   
  

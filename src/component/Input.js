@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { FaTelegramPlane } from 'react-icons/fa';
 import Img from "../img/img.png";
 import Ab from "../img/AbhiPic.jpeg";
 import Attach from "../img/attach.png";
@@ -134,7 +135,7 @@ function funset()
         <label htmlFor="file">
           <img src={Img} alt="" />
         </label>
-        <button onClick={handleSend}>Send</button>
+        <button onClick={handleSend}><FaTelegramPlane/></button>
       </div>
     </div>
   );

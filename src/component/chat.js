@@ -1,4 +1,8 @@
 import React, { useContext } from "react";
+import { FcVideoCall } from 'react-icons/fc';
+import { HiUserAdd } from 'react-icons/hi';
+import {BsThreeDots } from 'react-icons/bs';
+
 import Cam from "../img/cam.png";
 import Add from "../img/add.png";
 import More from "../img/more.png";
@@ -17,9 +21,9 @@ const Chat = () => {
         <span>{data.user?.displayName}</span>
         </div>
         <div className="chatIcons">
-          <img src={Cam} alt="" />
-          <img src={Add} alt="" />
-          <img src={More} alt="" />
+          <FcVideoCall style={{fontSize: "1.5em",color:"red"}}/>
+         <HiUserAdd  style={{fontSize: "1.5em",color:"green"}}/>
+          <BsThreeDots  style={{fontSize: "1.5em",color:"green"}}/>
         </div>
       </div>
       <Messages />

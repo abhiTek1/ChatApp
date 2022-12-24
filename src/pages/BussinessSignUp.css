@@ -1,0 +1,187 @@
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+.SignUp{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.SignUp-header{
+  display: flex;
+  padding-top: 45px;
+  width: 100%;
+  
+}
+.signup-img img{
+  max-width: 500px;
+}
+.signup-img{
+flex: 1;
+
+  max-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.formbox{
+  flex: 1;
+
+  max-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content:start;
+  text-align: left;
+ 
+
+ 
+}
+
+.form form{
+  width: 100%;
+  padding: 25px;
+}
+
+.h1 h1{
+ font-size: 30px;
+ padding: 15px 0;
+}
+
+.form input{
+  max-width: 350px;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #000;
+  border-radius: 0;
+}
+.form input:focus{
+  background-color: transparent;
+  border: 2px solid black ;
+}
+.mb-3{
+  
+  padding-bottom: 12px;
+}
+.my-3 .Avatar{
+
+display: block;
+
+}
+.signup-btn{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 35px;
+}
+
+.avatar-box{
+display: flex;
+justify-content: flex-start;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .SignUp-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  .SignUp-header .h1{
+    width: 650px;
+    padding: 50px 50px;
+    background-color: rgb(5, 195, 151);
+   font-size: 55px;
+   font-weight: bold;
+  }
+  .SignUp-header .Error{
+    color: crimson;
+    font-size: medium;
+  }
+   
+  .SignUp-header .form{
+     padding-top: 20px;
+    width: 650px;
+    height: 700px;
+    background-color: #fff;
+  }
+  .SignUp-header .form .form-label{
+    margin-right: 300px;
+    margin-top: 10px;
+    color:rgb(5, 195, 151) ;
+  }
+  .SignUp-header .form .form-control{
+    border: none;
+    border-bottom:4px solid  rgb(5, 195, 151) ;
+    width: 500px;
+     margin-left: 100px;
+     box-shadow: none;
+     font-size: 25px;
+  }
+  
+  .SignUp-header .form button{
+    margin-top: 30px;
+    background-color: rgb(5, 195, 151);
+    padding: 15px 0;
+    width: 500px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .SignUp-header .form .form-text{
+    font-size: 15px;
+    margin-right: 100px;
+  }
+  .SignUp-header .form .Avatar{
+     margin-right: 140px;
+     color:rgb(5, 195, 151) ;
+  } */

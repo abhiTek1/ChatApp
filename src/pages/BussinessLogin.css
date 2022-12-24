@@ -1,5 +1,5 @@
 .Login {
-  background-color: #282c34;
+  background-color: whitesmoke;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -19,6 +19,7 @@
 }
  
 .Login .container .form{
+  box-shadow: #2f2d52 0px 1px 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +28,7 @@
 }
 .Login .container .form  .h1{
   padding: 20px 67px;
-  background-color: rgb(5, 195, 151);
+  background-color: #2f2d52;
  font-size: 55px;
  font-weight: bold;
   
@@ -36,11 +37,11 @@
   margin-top: 15px;
    margin-right: 250px;
    
-  color:rgb(5, 195, 151) ;
+  color:#2f2d52 ;
 }
 .Login .container .form .form-control{
   border: none;
-  border-bottom:4px solid  rgb(5, 195, 151) ;
+  border-bottom:4px solid  #2f2d52 ;
    box-shadow: none;
    border-radius: 0px;
    padding: 10px 90px 10px 50px;
@@ -52,9 +53,10 @@
 }
 
 .Login .container .form button{
+  color: #fff;
   margin-top: 25px;
   margin-bottom: 25px;
-  background-color: rgb(5, 195, 151);
+  background-color: #2f2d52;
   padding: 15px 90px;
   border-radius: 0;
   font-size: 25px;

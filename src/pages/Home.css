@@ -51,21 +51,22 @@ cursor: pointer;
   height: 91vh;
 }
 .home-container .sidebar{
-border-right: 1px solid black; 
+border-right: 1px solid #5d5b8d; 
 flex:25%;
 background-color: whitesmoke;
+overflow:auto;
 }
 .home-container .chat{
  
 flex: 50%;
-border-right: 1px solid black;
+border-right: 1px solid #5d5b8d;
 }
 .home-container .View{
 flex:25%;
 background-color: whitesmoke;
 }
 .View .container{
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: #5d5b8d  0px 5px 15px;
 width: 400px;
 height: 500px;
 display: flex;
@@ -73,11 +74,11 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
  margin-top: 100px;
-border: 1px solid white;
+border: 1px solid #5d5b8d;
 border-radius: 35px;
 }
 .View .container img{
-  border: 2px solid black;
+  border: 2px solid #5d5b8d;
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -86,12 +87,15 @@ border-radius: 35px;
 .View .container span{
   margin-top: 10px;
  font-size: 25px;
+ color: #5d5b8d;
 }
 .View .container p{
   margin-top: 10px;
   font-size: 25px;
+  color: #5d5b8d;
 }
 .search .searchForm {
+  
   margin-top: 10px;
   padding: 10px;
   margin-bottom: 15px;
@@ -99,11 +103,11 @@ border-radius: 35px;
 .search input {
   box-sizing: border-box;
    padding: 0 90px 0 90px;
-  background-color: #eff2f6;
+  background-color: #525270;
   font-size: 20px;
   height: 60px;
     font-weight: 500;
-    color:  black;
+    color:  #5d5b8d;
     outline: none;
   }
   .search input::placeholder {
@@ -112,19 +116,20 @@ border-radius: 35px;
     /* .search input:hover{
       background-color: #dbdbe8;
     } */
+     
     .chats .container {
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-      border: 1px solid black;
+      box-shadow: #5d5b8d 0px 1px 4px;
+      border: 1px solid #5d5b8d;
       background-color: whitesmoke;
       margin-bottom: 10px;
-      width: 420px;
-       
+      width: 420px; 
+      height: 125px;
       padding: 25px;
       gap: 25px;
-      color: black;
+      color: #5d5b8d;
       cursor: pointer;
       display: flex;
-      overflow: auto;
+       
     }
     .container:hover {
         background-color: #dbdbe8;
@@ -142,12 +147,12 @@ border-radius: 35px;
         
           font-size: 25px;
           font-weight: 500;
-          color: black;
+          color: #5d5b8d;
           opacity:1;
         }
         .userChatInfo p {
           font-size: 25px;
-          color: black;
+          color: #5d5b8d;
         }
         .chatInfo {
           height: 100px;
@@ -169,7 +174,7 @@ border-radius: 35px;
          }
         .chatInfo  .div span {
           font-size: 25px;
-          color: black;
+          color: #5d5b8d;
            
         } 
         .chatInfo .chatIcons {
@@ -204,7 +209,7 @@ border-radius: 35px;
                   object-fit: cover;
                 }
                 .message .messageInfo span{
-                  color: black;
+                  color: #5d5b8d;
                   font-weight: 400;
                 }
                 .message .messageContent {
@@ -215,6 +220,7 @@ border-radius: 35px;
               }
               .message .messageContent  p {
                   background-color: white;
+                  margin-top: 30px;
                   font-size: 25px;
                   padding: 10px 20px;
                   border-radius: 0px 10px 10px 10px;
@@ -234,6 +240,7 @@ border-radius: 35px;
                 }
                 .owner .messageContent  p {
                     background-color: #323b58;
+                    margin-top: 30px;
                     color:#ddddf7  ;
                     padding: 10px 20px;
                     border-radius: 10px 0px 10px 10px;
@@ -255,7 +262,7 @@ border-radius: 35px;
                       background-color: transparent;
                       border: none;
                       outline: none;
-                      color: black;
+                      color: #5d5b8d;
                       font-weight: 500;
                       font-size: 18px;
             

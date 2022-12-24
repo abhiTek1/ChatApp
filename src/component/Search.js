@@ -77,7 +77,7 @@ const Search = () => {
     setUsername("")
   };
   return (
-    <div className="search">
+    <div className="search sticky-top">
       <div className="searchForm">
         <input
           type="text"

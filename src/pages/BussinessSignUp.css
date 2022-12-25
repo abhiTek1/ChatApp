@@ -1,108 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+body {
+  background-color: #eaeefd;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
 .SignUp {
-    background-color: whitesmoke;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   
-    color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.SignUp-header {
+  display: flex;
+  padding-top: 35px;
+  width: 100%;
+}
+.sign-img{
+  animation: animation 1.6s ease-in-out 3s infinite alternate-reverse both;
+  animation-delay: 2s;
+  max-width: 500px;
+}
+
+@keyframes animation {
+  0% {
+    transform: translateY(8px);
   }
-  .SignUp .container{
-   width: 430px;
+  100% {
+    transform: translateY(-6 px);
+  }
+}
+.signup-imgbox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.formbox {
+  flex: 1;
+  padding: 25px;
+  max-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  text-align: left;
+  animation: leftslide 3s ease-in-out   alternate-reverse both;
+
+}
+@keyframes leftslide {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(850px);
+  }
+}
+
+.form {
+  width: 100%;
+   padding-left: 80px;
+}
+
+.h1  {
+ 
+  padding: 15px;
+  max-width: 350px;
+  justify-content: center;
+  display: flex;
+
+
+}
+.h1-head{
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 50px;
+}
+.h1 img {
+  width: 65px;
+  margin-left: 10px;
+}
+.form input {
+  max-width: 350px;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #000;
+  border-radius: 0;
+}
+.form input:focus {
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+.mb-3 {
+  padding-bottom: 12px;
+  margin-bottom: 10px;
+
+}
+.my-3 .Avatar {
+  display: block;
+}
+.signup-btn {
+  font-family: 'Caveat', cursive;
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
+  max-width: 350px;
+}
+
+.avatar-box {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 350px;
+  
+}
+.avatar-box span{
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  font-weight: 600;
+  padding-left: 8px;
+
+}
+.av-img{
+  width: 55px;
+}
+form p {
+  max-width: 350px;
+  text-align: center;
+  margin: 0 !important;
+}
+.line {
+  margin-top: 43px;
+  width: 3px;
+  height: 400px;
+  background-color: gray  ;
+  border-radius: 50px;
+}
+.Error{
+  color: red;
+  font-family: 'Caveat', cursive;
+  max-width: 350px;
+  text-align: center;
+  font-size: 18px;
+  margin: 0 !important;
+
+}
+
+/* media queries for respomnsive */
+@media screen and (max-width: 1150px) {
+
+  .lg-text {
+    font-size: 30px;
+    text-align: left;
+  }
+  .lg-slogan {
+    font-size: 15px;
+  }
+  .sign-img {
+    width: 400px;
+  }
+  .wave-container {
+    height: 40px;
+    width: 100px;
+  }
+  .wave {
+    width: 8px;
+    padding: 0;
+  }
+  .nav-btn {
+    font-size: 22px;
+    padding: 10px 35px;
+  }
+}
+@media screen and (max-width: 950px) {
+ 
+  .lg-text {
+    font-size: 30px;
+    text-align: left;
+  }
+  .lg-slogan {
+    font-size: 12px;
+  }
+  .sign-img {
+    width: 380px;
+  }
+  .h1-head{
+    font-size: 40px !important;
+
+  }
+  .wave-container {
+    height: 40px;
+    width: 90px;
+  }
+  .wave {
+    width: 6px;
+    padding: 0;
+  }
+  .formbox .form{
+    padding-left: 40px;
+  }
+ 
+  .nav-btn {
+    font-size: 22px;
+    padding: 10px 30px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 780px) {
+
+  .SignUp-header {
+    flex-direction: column;
+  }
+  .line{
+    display: none;
+  }
+   .sign-img {
+    width: 420px;
+  
+  }
+  .h1-head{
+    font-size: 40px !important;
+
+  }
+  .wave-container {
+    height: 35px;
+    width: 80px;
+  }
+  .wave {
+    width: 7px;
     padding: 0;
   }
  
-  .SignUp .container .Error{
-    color: crimson;
-    font-size: medium;
+  .formbox .form{
+    padding-left: 0;
   }
-   
-  .SignUp .container .form{
-    box-shadow: #2f2d52 0px 1px 4px;
+  .form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: #fff;
+    justify-content: center !important;
+    align-items: center !important;
   }
-  .SignUp .container .form  .h1{
-    width: 430px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     flex-direction: column;
-    background-color: #2f2d52;
-   font-weight: bold;
-    
+  .mb-3 input{
+    max-width: 420px !important;
   }
-  .SignUp .container .form  .h1 h1{
-    font-size: 45px;
+  .nav-btn {
+    font-size: 22px;
+    padding: 10px 30px;
   }
-  .SignUp .container .form  .h1 h3{
+}
+@media screen and (min-width: 350px) and (max-width: 480px) {
+  .sign-img {
+    width: 360px;
+
+  }
+
+  .line{
+    display: none;
+  }
+  .SignUp-header {
+    flex-direction: column;
+  }
+  .h1-head{
+    font-size: 30px !important;
+
+  }
+  .lg-text {
+    font-size: 25px;
+    text-align: left;
+  }
+  .lg-slogan {
+    font-size: 12px;
+  }
+ 
+  .wave-container {
+    height: 35px;
+    width: 70px;
+  }
+  .wave {
+    width: 5px;
+    padding: 0;
+  }
+  .form-control{
+    font-size: 17px !important;
+  }
+  .formbox .form{
+    padding-left: 0;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .nav-btn {
+    font-size: 20px;
+    padding: 10px 30px;
+  }
+  .navigate-link{
+    font-size: 14px;
+  }
+  .av-img{
+    width: 50px;
+  }
+}
+@media screen and (min-width: 240px) and (max-width: 350px) {
+  .sign-img {
+    width: 280px;
+  }
+  .SignUp-header {
+    flex-direction: column;
+  }
+  .line{
+    display: none;
+  }
+  .h1-head{
+    font-size: 22px !important;
+
+  }
+  .form-control{
+    font-size: 14px !important;
+  }
+  .formbox .form{
+    padding-left: 0;
+  }
+  .lg-text {
     font-size: 15px;
+    text-align: left;
   }
-  .SignUp .container .form .form-label{
-    
-    margin-right: 250px;
-     
-    color:#2f2d52 ;
-  }
-  .SignUp .container .form .form-control{
-    border: none;
-    border-bottom:4px solid  #2f2d52 ;
-     box-shadow: none;
-     border-radius: 0px;
-     padding: 10px 110px 10px 20px;
-     font-size: 15px;
-  }
-  .SignUp .container .form input::placeholder{
-    color: rgb(230, 229, 228);
+  .lg-slogan {
+    font-size: 8px;
   }
   
-  .SignUp .container .form button{
-     
-    margin-bottom: 15px;
-    background-color: #2f2d52;
-    padding: 10px 110px;
-    color:#ffff ;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  .SignUp .container .form .form-text{
-    font-size: 15px;
-     
-  }
-  .SignUp .container .form .Avatar{
-    
-     margin-right: 140px;
-     color:#2f2d52 ;
-  }
-  .SignUp .container .form .Avatar img{
+  .wave-container {
+    height: 30px;
     width: 50px;
-    height: 50px;
   }
-  @media  only screen and (max-width:994px){
-    .SignUp .container .form{
-      border-radius: 30px;
-      overflow: hidden;
-    }
+  .wave {
+    width: 3px;
+    border-radius: 10px;
   }
-  @media  only screen and (max-width:1217px){
-    .SignUp .container .form  .h1{
-      padding: 20px 90px;
-    }
-    }
-    @media  only screen and (max-width:1126px){
-      .SignUp .container .form  .h1{
-        padding: 20px 100px;
-      }
-    }
-    @media  only screen and (max-width:885px){
-      .SignUp .container .form  .h1{
-        padding: 20px 110px;
-      }
-    }
-    @media  only screen and (max-width:668px){
-      .SignUp .container .form  .h1{
-        padding: 20px 120px;
-      }
-    }
+
+  .nav-btn {
+    font-size: 16px;
+    padding: 8px 25px;
+  }
+  .navigate-link{
+    font-size: 12px;
+  }
+  .av-img{
+    width: 40px;
+  }
+}

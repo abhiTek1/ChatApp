@@ -14,7 +14,7 @@ function App() {
 
   const ProtectedRoute = ({ children }) => {
     if (!currentUser) {
-      return <Navigate to="/home" />;
+      return <Navigate to="/" />;
     }
 
     return children

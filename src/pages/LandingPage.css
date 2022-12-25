@@ -18,8 +18,8 @@ html {
   overflow-x: hidden;
 }
 body {
-  /* background-color: #eaeefd; */
-  background-color:whitesmoke;
+  background-color: #eaeefd;
+  /* background-color:whitesmoke; */
 
 }
 
@@ -85,6 +85,7 @@ body {
 }
 
 .lg-text {
+  color: #0918e9;
   font-family: "Prata", serif;
   font-size: 40px;
   font-weight: bolder;
@@ -92,7 +93,7 @@ body {
 }
 .lg-slogan {
   font-family: "Bebas Neue", cursive;
-
+  color: #0918e9;
   font-weight: 500;
   font-size: 20px;
   text-align: left;

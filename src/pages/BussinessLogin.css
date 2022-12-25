@@ -1,98 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+body {
+  background-color: #eaeefd;
+}
+
+
+body,
+html {
+  overflow-x: hidden;
+}
 .Login {
-  background-color: whitesmoke;
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-.Login .container{
- width: 430px;
-  padding: 0;
+  flex-direction: column;
 }
 
-.Login .container .Error{
-  color: crimson;
-  font-size: medium;
+.Login-header {
+  display: flex;
+  padding-top: 45px;
+  width: 100%;
 }
- 
-.Login .container .form{
-  box-shadow: #2f2d52 0px 1px 4px;
+.log-img {
+  animation: animation 1.6s ease-in-out 3s infinite alternate-reverse both;
+    animation-delay: 2s;
+    max-width: 500px;
+  }
+  
+  @keyframes animation {
+    0% {
+      transform: translateY(8px);
+    }
+    100% {
+      transform: translateY(-6 px);
+    }
+  }
+.login-imgbox {
+  flex: 1;
+  /* max-height: 450px; */
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-color: #fff;
 }
-.Login .container .form  .h1{
-  width: 430px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   flex-direction: column;
-  background-color: #2f2d52;
- font-weight: bold;
-  
+
+.line {
+  margin-top: 43px;
+  width: 3px;
+  height: 400px;
+  background-color: gray  ;
+  border-radius: 50px;
 }
-.Login .container .form  .h1 h1{
-  font-size: 55px;
+
+.formbox {
+  flex: 1;
+  padding: 25px;
+  max-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
 }
-.Login .container .form  .h1 h3{
+
+.form {
+  width: 100%;
+   padding-left: 80px;
+   animation: leftslide 3s ease-in-out  alternate-reverse both;
+
+}
+
+@keyframes leftslide {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(850px);
+  }
+}
+
+
+.h1  {
+ 
+  padding: 15px;
+  max-width: 350px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+
+}
+.h1-head{
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 50px;
+}
+.h1 img {
+  width: 65px;
+  margin-left: 10px;
+}
+
+.mb-3 {
+  padding-bottom: 12px;
+}
+
+.form input {
+  max-width: 350px;
   font-size: 20px;
-}
-.Login .container .form .form-label{
-  margin-top: 15px;
-   margin-right: 250px;
-   
-  color:#2f2d52 ;
-}
-.Login .container .form .form-control{
+  background-color: transparent;
   border: none;
-  border-bottom:4px solid  #2f2d52 ;
-   box-shadow: none;
-   border-radius: 0px;
-   padding: 10px 110px 10px 20px;
-   font-size: 15px;
-   
-}
-.Login .container .form input::placeholder{
-  color: rgb(230, 229, 228);
-}
-
-.Login .container .form button{
-  color: #fff;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  background-color: #2f2d52;
-  padding: 15px 90px;
+  outline: none;
+  border-bottom: 1px solid #000;
   border-radius: 0;
-  font-size: 15px;
-  font-weight: bold;
 }
-@media  only screen and (max-width:994px){
-  .Login .container .form{
-    border-radius: 30px;
-    overflow: hidden;
-  }
+.form input:focus {
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 8px;
 }
 
-@media  only screen and (max-width:1217px){
-  .Login .container .form  .h1{
-    padding: 20px 70px;
+
+.login-btn {
+  font-family: 'Caveat', cursive;
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
+  max-width: 350px;
+}
+
+.Error{
+  color: red;
+  font-family: 'Caveat', cursive;
+  max-width: 350px;
+  text-align: center;
+  font-size: 18px;
+
+}
+
+form p {
+  max-width: 350px;
+  text-align: center;
+}
+
+
+/* media quries for responsive */
+@media screen and (max-width: 1150px) {
+
+  .lg-text {
+    font-size: 30px;
+    text-align: left;
   }
+  .lg-slogan {
+    font-size: 15px;
   }
-  @media  only screen and (max-width:1126px){
-    .Login .container .form  .h1{
-      padding: 20px 80px;
-    }
+  .log-img {
+    width: 400px;
   }
-  @media  only screen and (max-width:885px){
-    .Login .container .form  .h1{
-      padding: 20px 90px;
-    }
+  .wave-container {
+    height: 40px;
+    width: 100px;
   }
-  @media  only screen and (max-width:668px){
-    .Login .container .form  .h1{
-      padding: 20px 100px;
-    }
+  .wave {
+    width: 8px;
+    padding: 0;
+  }
+  .nav-btn {
+    font-size: 22px;
+    padding: 10px 35px;
+  }
+}
+@media screen and (max-width: 950px) {
+ 
+  .lg-text {
+    font-size: 30px;
+    text-align: left;
+  }
+  .lg-slogan {
+    font-size: 12px;
+  }
+  .log-img {
+    width: 380px;
+  }
+  .h1-head{
+    font-size: 40px !important;
+
+  }
+  .wave-container {
+    height: 40px;
+    width: 90px;
+  }
+  .wave {
+    width: 6px;
+    padding: 0;
+  }
+  .formbox .form{
+    padding-left: 40px;
+  }
+ 
+  .nav-btn {
+    font-size: 22px;
+    padding: 10px 30px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 780px) {
+
+  .Login-header {
+    flex-direction: column;
+  }
+  .line{
+    display: none;
+  }
+   .log-img {
+    width: 420px;
+  
+  }
+  .h1-head{
+    font-size: 40px !important;
+
+  }
+  .wave-container {
+    height: 35px;
+    width: 80px;
+  }
+  .wave {
+    width: 7px;
+    padding: 0;
+  }
+ 
+  .formbox .form{
+    padding-left: 0;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .mb-3 input{
+    max-width: 420px !important;
+  }
+  .nav-btn {
+    font-size: 22px;
+    padding: 10px 30px;
+  }
+}
+@media screen and (min-width: 350px) and (max-width: 480px) {
+  .log-img {
+    width: 360px;
+
+  }
+
+  .line{
+    display: none;
+  }
+  .Login-header {
+    flex-direction: column;
+  }
+  .h1-head{
+    font-size: 30px !important;
+
+  }
+  .lg-text {
+    font-size: 25px;
+    text-align: left;
+  }
+  .lg-slogan {
+    font-size: 12px;
+  }
+ 
+  .wave-container {
+    height: 35px;
+    width: 70px;
+  }
+  .wave {
+    width: 5px;
+    padding: 0;
+  }
+  .form-control{
+    font-size: 17px !important;
+  }
+  .formbox .form{
+    padding-left: 0;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .nav-btn {
+    font-size: 20px;
+    padding: 10px 30px;
+  }
+  .navigate-link{
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 240px) and (max-width: 350px) {
+  .log-img {
+    width: 280px;
+  }
+  .Login-header {
+    flex-direction: column;
+  }
+  .line{
+    display: none;
+  }
+  .h1-head{
+    font-size: 22px !important;
+
+  }
+  .form-control{
+    font-size: 14px !important;
+  }
+  .formbox .form{
+    padding-left: 0;
+  }
+  .lg-text {
+    font-size: 15px;
+    text-align: left;
+  }
+  .lg-slogan {
+    font-size: 8px;
   }
   
+  .wave-container {
+    height: 30px;
+    width: 50px;
+  }
+  .wave {
+    width: 3px;
+    border-radius: 10px;
+  }
+
+  .nav-btn {
+    font-size: 16px;
+    padding: 8px 25px;
+  }
+  .navigate-link{
+    font-size: 12px;
+  }
+}

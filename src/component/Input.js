@@ -1,10 +1,14 @@
 import React, { useContext, useState } from "react";
 import { FaTelegramPlane } from 'react-icons/fa';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import Img from "../img/img.png";
 import Ab from "../img/AbhiPic.jpeg";
 import Attach from "../img/attach.png";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
+import EmojiPicker from 'emoji-picker-react';
+import Picker from 'emoji-picker-react';
 import {
   arrayUnion,
   doc,
@@ -20,6 +24,10 @@ const Input = () => {
   const [text, setText] = useState("");
   const [img, setImg] = useState(null);
   const [img1, setImg1] = useState(null);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
@@ -32,6 +40,10 @@ function funset()
   
   // handleSend()
 }
+const onEmojiClick = (event, emojiObject) => {
+  setText(prevInput => prevInput + emojiObject.emoji);
+  
+};
 
   const handleSend = async () => {
     if (img ) {
@@ -117,6 +129,14 @@ function funset()
     setImg(null);
   };
   return (
+    <>
+     <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+      <Picker  onEmojiClick={(emojiObject)=> setText((prevMsg)=> prevMsg + emojiObject.emoji)} />
+      </Modal>
     <div className="input">
       <input
         type="text" 
@@ -125,7 +145,8 @@ function funset()
         value={text}
       />
       <div className="send">
-        <img src={Attach} alt="" onClick={()=>funset()} />
+      {/* <EmojiPicker /> */}
+        <img src={Attach} alt="" onClick={handleShow}/>
         <input
           type="file"
           style={{ display: "none" }}
@@ -134,10 +155,12 @@ function funset()
         />
         <label htmlFor="file">
           <img src={Img} alt="" />
+          
         </label>
         <button onClick={handleSend}><FaTelegramPlane/></button>
       </div>
     </div>
+    </>
   );
 };
 

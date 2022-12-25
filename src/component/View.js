@@ -9,7 +9,7 @@ return(
         <div className="container">
             <img src={currentUser.photoURL} alt=''/>
             <span> Name : {currentUser.displayName}</span>
-            <p> Email : email@gmail.com</p>
+            <p> Email : {currentUser.email} </p>
         </div>
     </div>
 )

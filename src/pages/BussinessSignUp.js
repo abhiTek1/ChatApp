@@ -6,6 +6,7 @@ import {db  } from "../Firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { setDoc ,doc } from "firebase/firestore";
 import "./BussinessSignUp.css";
+ 
 import Add from '../img/addAvatar.png'
 
 function SignUp() {
@@ -47,7 +48,7 @@ function SignUp() {
 
             //create empty user chats on firestore
             await setDoc(doc(db, "userChats", res.user.uid), {});
-            navigate("/");
+            navigate("/home");
           } catch (err) {
             console.log(err);
             setErr(true);
@@ -67,7 +68,7 @@ function SignUp() {
         <form className="form" onSubmit={handleSubmit}>
         <div className="h1">
           <h1>Sign Up</h1>
-          <h3> Already have an account? <Link to="/Login"><span>Log In</span></Link> </h3>
+          <h3> Already have an account? <br/> <Link to="/Login"><span>Log In</span></Link> </h3>
           <b className="Error">{err }</b>
           <b className="Error">{loading }</b>
         </div>

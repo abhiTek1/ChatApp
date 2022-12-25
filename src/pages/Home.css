@@ -5,18 +5,20 @@
   justify-content: center;
 }
 
+/* Navbar #2f2d52    */
+
 .Navbar{
 display: flex;
 align-items: center;
-background-color: #2f2d52;
-height: 100px;
+background-color: #225077;
+height: 70px;
 padding: 10px;
 justify-content: space-between;
 color: #ddddf7;
 }
 .Navbar .logo {
 font-weight: bold;
-font-size: 30px;
+font-size: 3vmin;
 margin-left: 60px;
 }
 .Navbar .user { 
@@ -26,24 +28,25 @@ margin-right: 60px;
 .Navbar .user img {
 margin-right: 30px;
 background-color: #ddddf7;
-height: 70px;
-width: 70px;
+height: 50px;
+width: 50px;
 border-radius: 50%;
 object-fit: cover;
 }
 .Navbar .user span{
 margin-right: 30px;
-font-size: 25px;
+font-size: 2.5vmin;
 font-weight: 500;
 }
 .Navbar .user button {
 background-color: #5d5b8d;
 color: #ddddf7;
 padding: 5px 20px;
-font-size: 20px;
+font-size: 2vmin;
 border: none;
 cursor: pointer;
 }
+/* Sidebar       */
 .home-container{
   display: flex;
   padding: 0;
@@ -57,7 +60,6 @@ background-color: whitesmoke;
 overflow:auto;
 }
 .home-container .chat{
- 
 flex: 50%;
 border-right: 1px solid #5d5b8d;
 }
@@ -65,10 +67,13 @@ border-right: 1px solid #5d5b8d;
 flex:25%;
 background-color: whitesmoke;
 }
+
+/* View of user data */
+
 .View .container{
   box-shadow: #5d5b8d  0px 5px 15px;
-width: 400px;
-height: 500px;
+width: 250px;
+height: 400px;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -79,52 +84,57 @@ border-radius: 35px;
 }
 .View .container img{
   border: 2px solid #5d5b8d;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
 }
 .View .container span{
   margin-top: 10px;
- font-size: 25px;
+ font-size: 1.5vmin;
  color: #5d5b8d;
 }
 .View .container p{
   margin-top: 10px;
-  font-size: 25px;
+  font-size: 1.5vmin;
   color: #5d5b8d;
 }
+
+/* Search of user */
+
+.search{
+  background-color: whitesmoke;
+}
 .search .searchForm {
-  
-  margin-top: 10px;
   padding: 10px;
   margin-bottom: 15px;
 }
 .search input {
   box-sizing: border-box;
-   padding: 0 90px 0 90px;
-  background-color: #525270;
-  font-size: 20px;
-  height: 60px;
+   padding: 0 30px 0 30px;
+  background-color: whitesmoke;
+  border: 1px solid #5d5b8d;
+  font-size: 2vmin;
+  height: 40px;
     font-weight: 500;
     color:  #5d5b8d;
     outline: none;
   }
   .search input::placeholder {
-      color: #525270;
+      color: #a3a3b1;
     }
-    /* .search input:hover{
-      background-color: #dbdbe8;
-    } */
-     
+    .search input:hover{
+      background-color: #efeff1;
+    }
+    /* User Deatail of user */
+
     .chats .container {
-      box-shadow: #5d5b8d 0px 1px 4px;
-      border: 1px solid #5d5b8d;
+      /* box-shadow: #5d5b8d 0px 1px 4px; */
+      border-bottom: 1px solid #5d5b8d;
       background-color: whitesmoke;
-      margin-bottom: 10px;
-      width: 420px; 
-      height: 125px;
-      padding: 25px;
+      width: 300px; 
+      height: 70px;
+      padding: 5px 25px 0 25px;
       gap: 25px;
       color: #5d5b8d;
       cursor: pointer;
@@ -132,31 +142,50 @@ border-radius: 35px;
        
     }
     .container:hover {
-        background-color: #dbdbe8;
+        background-color: #e5e5f0;
       }
 
       .container img {
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
         object-fit: cover;
       }
-
+      .userChat {
+        display: flex;
+        align-items: center;
+          justify-content: left;
+          gap: 20px;
+        border-bottom: 1px solid #5d5b8d ;
+        cursor: pointer;
+        padding: 5px 25px 3px 25px;
+      }
+      .userChat img{
+        
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
       
       .userChatInfo span {
         
-          font-size: 25px;
+          font-size: 2.5vmin;
           font-weight: 500;
           color: #5d5b8d;
           opacity:1;
         }
         .userChatInfo p {
-          font-size: 25px;
+          font-size: 1.5vmin;
           color: #5d5b8d;
         }
+
+        /* Navbar of second user */
+
         .chatInfo {
-          height: 100px;
-          background-color: whitesmoke;
+          box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 20px -10px;
+          height: 80px;
+          background-color: rgb(237, 236, 236);
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -167,13 +196,13 @@ border-radius: 35px;
         }
          .chatInfo .div img{
           margin-right: 20px;
-          width: 70px;
-          height: 70px;
+          width: 60px;
+          height: 60px;
           border-radius: 50%;
           object-fit: cover;
          }
         .chatInfo  .div span {
-          font-size: 25px;
+          font-size: 2.5vmin;
           color: #5d5b8d;
            
         } 
@@ -185,6 +214,7 @@ border-radius: 35px;
           height: 35px; 
             cursor: pointer;
           }
+          /* Message of all user */
       .messages {
             background-color: whitesmoke;
             padding: 10px;
@@ -203,8 +233,8 @@ border-radius: 35px;
                 font-weight: 300;
               }
               .message .messageInfo img {
-                  width: 70px;
-                  height: 70px;
+                  width: 50px;
+                  height: 50px;
                   border-radius: 50%;
                   object-fit: cover;
                 }
@@ -221,7 +251,7 @@ border-radius: 35px;
               .message .messageContent  p {
                   background-color: white;
                   margin-top: 30px;
-                  font-size: 25px;
+                  font-size: 2vmin;
                   padding: 10px 20px;
                   border-radius: 0px 10px 10px 10px;
                   max-width: max-content;
@@ -231,7 +261,7 @@ border-radius: 35px;
                   width: 50%;
                 }
                
-    
+    /*  Second user Chat */
                .owner {
                 flex-direction: row-reverse;
                }
@@ -246,9 +276,11 @@ border-radius: 35px;
                     border-radius: 10px 0px 10px 10px;
                     max-width: max-content;
                   }  
+
+                  /* Input from user  */
                   .input {
-                     
-                    background-color: whitesmoke;
+                      height: 80px;
+                    background-color: rgb(237, 236, 236);
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
@@ -264,7 +296,7 @@ border-radius: 35px;
                       outline: none;
                       color: #5d5b8d;
                       font-weight: 500;
-                      font-size: 18px;
+                      font-size: 1.8vmin;
             
                     }
                     .input input::placeholder {
@@ -287,11 +319,85 @@ border-radius: 35px;
                         border: none;
                         padding: 7px 15px;
                         color: white;
-                        font-size: 20px;
+                        font-size: 2vmin;
                         background-color: #444b64;
                         cursor: pointer;
                       }
-
+ @media  only screen and (max-width:1313px){
+  .search input {
+    padding: 0 10px 0 10px;
+  }
+ }
+ @media  only screen and (max-width:1161px){
+  .search input {
+    padding:0 10px 0 15px;
+    font-size: 2vmin;
+  }
+  .chats .container{
+    width: 250px; 
+    
+      
+  }
+ }
+ @media  only screen and (max-width:1138px){
+  .View .container{
+    width: 200px;
+height: 350px;
+  }
+  .home{
+    font-size: 2vmin;
+  }
+}
+@media  only screen and (max-width:955px){
+  .search input {
+    padding: 0 5px 0 5px;
+  }
+}
+@media  only screen and (max-width:980px){
+  .View .container{
+    width: 200px;
+height: 350px;
+  }
+  .search input {
+    padding: 0 10px 0 10px;
+  }
+  .chats .container{
+    width: 200px;  
+    padding-left: 0; 
+  }
+  .container img {
+    
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .container span{
+    font-size: 1.9vmin;
+  }
+}
+@media  only screen and (max-width:885px){
+  .View {
+     display: none;
+  }
+  .chats .container{
+    width: 250px;  
+    padding-left: 0; 
+  }
+  .container span{
+    font-size: 2.3vmin;
+  }
+  .search input {
+    padding: 0 25px 0 25px;
+  }
+   
+}
+@media  only screen and (max-width:687px){
+  .chats .container{
+    width: 250px;  
+    padding-left: 20px; 
+  }
+}
 
 
 

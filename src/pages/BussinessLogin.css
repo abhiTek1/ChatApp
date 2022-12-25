@@ -4,12 +4,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 .Login .container{
- width: 530px;
- height: 550px;
+ width: 430px;
   padding: 0;
 }
 
@@ -23,15 +21,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-   
   background-color: #fff;
 }
 .Login .container .form  .h1{
-  padding: 20px 67px;
+  width: 430px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
   background-color: #2f2d52;
- font-size: 55px;
  font-weight: bold;
   
+}
+.Login .container .form  .h1 h1{
+  font-size: 55px;
+}
+.Login .container .form  .h1 h3{
+  font-size: 20px;
 }
 .Login .container .form .form-label{
   margin-top: 15px;
@@ -44,8 +50,8 @@
   border-bottom:4px solid  #2f2d52 ;
    box-shadow: none;
    border-radius: 0px;
-   padding: 10px 90px 10px 50px;
-   font-size: 25px;
+   padding: 10px 110px 10px 20px;
+   font-size: 15px;
    
 }
 .Login .container .form input::placeholder{
@@ -59,7 +65,7 @@
   background-color: #2f2d52;
   padding: 15px 90px;
   border-radius: 0;
-  font-size: 25px;
+  font-size: 15px;
   font-weight: bold;
 }
 @media  only screen and (max-width:994px){

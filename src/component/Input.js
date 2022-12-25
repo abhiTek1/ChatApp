@@ -124,7 +124,8 @@ const onEmojiClick = (event, emojiObject) => {
       },
       [data.chatId + ".date"]: serverTimestamp(),
     });
-
+    setText("");
+    setImg(null);
     setText("");
     setImg(null);
   };

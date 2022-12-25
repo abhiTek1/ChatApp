@@ -4,7 +4,7 @@ import Sidebar from '../component/Sidebar';
 import './Home.css';
 import '../component/Component.css';
 import Navbar from '../component/Navbar';
-import View from '../component/View'
+// import View from '../component/View'
 
 const Home = () => {
   return (
@@ -13,7 +13,7 @@ const Home = () => {
     <div className='home-container'>
         <Sidebar/>
         <Chat/>
-        <View/>
+        {/* <View/> */}
     </div> 
     </div>
   )

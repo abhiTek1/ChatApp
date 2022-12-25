@@ -29,6 +29,7 @@ function SignUp() {
         try {
             //Create user
             const res = await createUserWithEmailAndPassword(auth, email, password);
+                // Signed in
       
             //Create a unique image name
             const date = new Date().getTime();
@@ -61,6 +62,7 @@ function SignUp() {
               });
             });
           } catch (err) {
+            console.log(err);
             setErr(true);
             setLoading(false);
           }

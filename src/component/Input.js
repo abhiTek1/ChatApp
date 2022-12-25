@@ -1,8 +1,12 @@
 import React, { useContext, useState } from "react";
-import Img from "../img/img.png";
-// import Attach from "../img/attach.png";
+import { FaTelegramPlane } from 'react-icons/fa';
+import Modal from 'react-bootstrap/Modal';
+// import Img from "../img/img.png";
+import Attach from "../img/attach.png";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
+import Picker from 'emoji-picker-react';
+import { BiImage } from "react-icons/bi";
 import {
   arrayUnion,
   doc,
@@ -13,23 +17,26 @@ import {
 import { db, storage } from "../Firebase";
 import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import Picker from 'emoji-picker-react';
 
 const Input = () => {
   const [text, setText] = useState("");
   const [img, setImg] = useState(null);
-  const [showPicker, setShowPicker] = useState(false);
+  const [show, setShow] = useState(false);
 
-  const onEmojiClick = (event, emojiObject) => {
-    setImg(prevInput => prevInput + emojiObject.emoji);
-    setShowPicker(false);
-  };
-console.log (text);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
+   
+ 
+const onEmojiClick = (event, emojiObject) => {
+  setText(prevInput => prevInput + emojiObject.emoji);
+  
+};
 
   const handleSend = async () => {
-    if (img) {
+    if (img ) {
       const storageRef = ref(storage, uuid());
 
       const uploadTask = uploadBytesResumable(storageRef,img);
@@ -52,7 +59,9 @@ console.log (text);
           });
         }
       );
-    } else {
+    } 
+    else {
+      
       await updateDoc(doc(db, "chats", data.chatId), {
         messages: arrayUnion({
           id: uuid(),
@@ -78,26 +87,29 @@ console.log (text);
     });
     setText("");
     setImg(null);
-     
   };
+
+
   return (
+    <>
+     <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+      <Picker  onEmojiClick={(emojiObject)=> setText((prevMsg)=> prevMsg + emojiObject.emoji)} />
+      </Modal.Header>
+      </Modal>
     <div className="input">
       <input
-        // type="text" 
+        type="text" 
+        multiline
+        rows={5}
+        autoComplete="on"
         placeholder="Type something..."
         onChange={(e) => setText(e.target.value)}
         value={text}
       />
       <div className="send">
-      <div className="send1">
-      <img
-          className="emoji-icon"
-          src="https://icons.getbootstrap.com/assets/icons/emoji-smile.svg" alt=""
-          onClick={() => setShowPicker(val => !val)} />
-        {showPicker && <Picker
-          pickerStyle={{ width: '30%' }}
-          onEmojiClick={onEmojiClick} />}
-          </div>
+      {/* <EmojiPicker /> */}
+        <img src="https://icons.getbootstrap.com/assets/icons/emoji-smile.svg" alt="" onClick={handleShow}/>
         <input
           type="file"
           style={{ display: "none" }}
@@ -105,11 +117,13 @@ console.log (text);
           onChange={(e) => setImg(e.target.files[0])}
         />
         <label htmlFor="file">
-          <img src={Img} alt="" />
+          <img src="https://icons.getbootstrap.com/assets/icons/image.svg" alt="" />
+           
         </label>
-        <button onClick={handleSend}>Send</button>
+        <img src="https://icons.getbootstrap.com/assets/icons/arrow-right-square-fill.svg" onClick={handleSend} />
       </div>
     </div>
+    </>
   );
 };
 

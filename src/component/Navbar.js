@@ -9,7 +9,7 @@ const Navbar = () => {
   const { currentUser } = useContext(AuthContext);
   return (
     <div className='  Navbar'>
-    <div>
+    <div className='logo'>
               <Link to="/home">
                 <h1 className="lg-text">TalkTastic</h1>
                 <p className="lg-slogan">connect with the world</p>

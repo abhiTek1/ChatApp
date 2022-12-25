@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import Img from "../img/img.png";
-import Attach from "../img/attach.png";
+// import Attach from "../img/attach.png";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
 import {
@@ -13,11 +13,18 @@ import {
 import { db, storage } from "../Firebase";
 import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import Picker from 'emoji-picker-react';
 
 const Input = () => {
   const [text, setText] = useState("");
   const [img, setImg] = useState(null);
+  const [showPicker, setShowPicker] = useState(false);
 
+  const onEmojiClick = (event, emojiObject) => {
+    setImg(prevInput => prevInput + emojiObject.emoji);
+    setShowPicker(false);
+  };
+console.log (text);
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
@@ -71,19 +78,26 @@ const Input = () => {
     });
     setText("");
     setImg(null);
-    setText("");
-    setImg(null);
+     
   };
   return (
     <div className="input">
       <input
-        type="text" 
+        // type="text" 
         placeholder="Type something..."
         onChange={(e) => setText(e.target.value)}
         value={text}
       />
       <div className="send">
-        <img src={Attach} alt="" />
+      <div className="send1">
+      <img
+          className="emoji-icon"
+          src="https://icons.getbootstrap.com/assets/icons/emoji-smile.svg" alt=""
+          onClick={() => setShowPicker(val => !val)} />
+        {showPicker && <Picker
+          pickerStyle={{ width: '30%' }}
+          onEmojiClick={onEmojiClick} />}
+          </div>
         <input
           type="file"
           style={{ display: "none" }}

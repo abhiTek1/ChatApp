@@ -10,16 +10,22 @@
 .Navbar{
 display: flex;
 align-items: center;
-background-color: #225077;
+background-color:#0918e9;
 height: 70px;
 padding: 10px;
 justify-content: space-between;
 color: #ddddf7;
 }
 .Navbar .logo {
-font-weight: bold;
-font-size: 3vmin;
+  color: whitesmoke;
 margin-left: 60px;
+}
+.Navbar .logo h1{
+  color: whitesmoke;
+  font-size: 3vmin;
+}
+.Navbar .logo p{
+  color: whitesmoke;
 }
 .Navbar .user { 
  
@@ -34,13 +40,14 @@ border-radius: 50%;
 object-fit: cover;
 }
 .Navbar .user span{
+  color: whitesmoke;
 margin-right: 30px;
 font-size: 2.5vmin;
 font-weight: 500;
 }
 .Navbar .user button {
-background-color: #5d5b8d;
-color: #ddddf7;
+background-color: whitesmoke;
+color: blue;
 padding: 5px 20px;
 font-size: 2vmin;
 border: none;
@@ -108,6 +115,9 @@ border-radius: 35px;
 .search .searchForm {
   padding: 10px;
   margin-bottom: 15px;
+}
+.search span{
+  color: #0918e9;
 }
 .search input {
   box-sizing: border-box;
@@ -185,7 +195,7 @@ border-radius: 35px;
         .chatInfo {
           box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 20px -10px;
           height: 80px;
-          background-color: rgb(237, 236, 236);
+          background-color: #e2e8fa;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -216,7 +226,7 @@ border-radius: 35px;
           }
           /* Message of all user */
       .messages {
-            background-color: whitesmoke;
+            background-color: #eaeefd;
             padding: 10px;
             height: calc(100% - 160px);
             overflow:auto;
@@ -288,27 +298,39 @@ border-radius: 35px;
                     color: lightgray;
                   }
                   .input input {
-                    margin-left: 15px;
-                      width: 100%;
-                      padding: 10px 0;
-                      background-color: transparent;
+                    margin-left: 10px;
+                      width: 400px;
+                      padding: 0px 0 0px 10px;
+                      height: 50px;
+                      background-color: rgb(221, 219, 219)  ;
                       border: none;
                       outline: none;
                       color: #5d5b8d;
                       font-weight: 500;
-                      font-size: 1.8vmin;
+                      font-size: 3vmin;
             
                     }
                     .input input::placeholder {
                         color: rgb(82, 80, 80);
                       }
+                      .send1{
+                        position: absolute;
+                        top: 200px;
+                        right: 300px;
+                      }
+                      .send .emoji-icon {
+                        position: fixed;
+                        cursor: pointer;
+                          bottom: 18px;
+                          right: 430px;
+                        }
                       .input .send {
                       display: flex;
                       align-items: center;
-                      gap: 25px;
+                      gap: 20px;
                     }
                     .input .send  img {
-                        height: 35px;
+                        height: 30px;
                         cursor: pointer;
                       }
                       .input .send  img:hover{
@@ -327,6 +349,7 @@ border-radius: 35px;
   .search input {
     padding: 0 10px 0 10px;
   }
+  
  }
  @media  only screen and (max-width:1161px){
   .search input {
@@ -334,9 +357,10 @@ border-radius: 35px;
     font-size: 2vmin;
   }
   .chats .container{
-    width: 250px; 
-    
-      
+    width: 250px;    
+  }
+  .input input{
+    width: 320px;
   }
  }
  @media  only screen and (max-width:1138px){
@@ -347,10 +371,16 @@ height: 350px;
   .home{
     font-size: 2vmin;
   }
+  .input input{
+    width: 300px;
+  }
 }
 @media  only screen and (max-width:955px){
   .search input {
     padding: 0 5px 0 5px;
+  }
+  .input input{
+    width: 270px;
   }
 }
 @media  only screen and (max-width:980px){
@@ -375,8 +405,22 @@ height: 350px;
   .container span{
     font-size: 1.9vmin;
   }
+  .input input{
+    width: 250px;
+  }
 }
 @media  only screen and (max-width:885px){
+  .send1{
+    position: absolute;
+    top: 200px;
+    right: 100px;
+  }
+  .send .emoji-icon {
+    position: fixed;
+    cursor: pointer;
+      bottom: 18px;
+      right: 150px;
+    }
   .View {
      display: none;
   }
@@ -390,12 +434,24 @@ height: 350px;
   .search input {
     padding: 0 25px 0 25px;
   }
+  .input input{
+    width: 220px;
+  }
    
+}
+@media  only screen and (max-width:712px){
+  .chats .container{
+    width: 250px;  
+    padding-left: 20px; 
+  }
 }
 @media  only screen and (max-width:687px){
   .chats .container{
     width: 250px;  
     padding-left: 20px; 
+  }
+  .input input{
+    width: 180px;
   }
 }
 

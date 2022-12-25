@@ -1,51 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+body {
+  background-color: #eaeefd;
+}
+
+
+body,
+html {
+  overflow-x: hidden;
+}
+.Login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .Login-header {
-    background-color: #282c34;
-    min-height: 100vh;
+  display: flex;
+  padding-top: 45px;
+  width: 100%;
+}
+.log-img {
+  animation: animation 1.6s ease-in-out 3s infinite alternate-reverse both;
+    animation-delay: 2s;
+    max-width: 500px;
+  }
+  
+  @keyframes animation {
+    0% {
+      transform: translateY(8px);
+    }
+    100% {
+      transform: translateY(-6 px);
+    }
+  }
+.login-imgbox {
+  flex: 1;
+  /* max-height: 450px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.line {
+  margin-top: 43px;
+  width: 3px;
+  height: 400px;
+  background-color: gray  ;
+  border-radius: 50px;
+}
+
+.formbox {
+  flex: 1;
+  padding: 25px;
+  max-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.form {
+  width: 100%;
+   padding-left: 80px;
+   animation: leftslide 3s ease-in-out  alternate-reverse both;
+
+}
+
+@keyframes leftslide {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(850px);
+  }
+}
+
+
+.h1  {
+ 
+  padding: 15px;
+  max-width: 350px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+
+}
+.h1-head{
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 50px;
+}
+.h1 img {
+  width: 65px;
+  margin-left: 10px;
+}
+
+.mb-3 {
+  padding-bottom: 12px;
+}
+
+.form input {
+  max-width: 350px;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #000;
+  border-radius: 0;
+}
+.form input:focus {
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+
+.login-btn {
+  font-family: 'Caveat', cursive;
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
+  max-width: 350px;
+}
+
+.Error{
+  color: red;
+  font-family: 'Caveat', cursive;
+  max-width: 350px;
+  text-align: center;
+  font-size: 18px;
+
+}
+
+form p {
+  max-width: 350px;
+  text-align: center;
+}
+
+
+/* media quries for responsive */
+@media screen and (max-width: 1150px) {
+
+  .lg-text {
+    font-size: 30px;
+    text-align: left;
+  }
+  .lg-slogan {
+    font-size: 15px;
+  }
+  .log-img {
+    width: 400px;
+  }
+  .wave-container {
+    height: 40px;
+    width: 100px;
+  }
+  .wave {
+    width: 8px;
+    padding: 0;
+  }
+  .nav-btn {
+    font-size: 22px;
+    padding: 10px 35px;
+  }
+}
+@media screen and (max-width: 950px) {
+ 
+  .lg-text {
+    font-size: 30px;
+    text-align: left;
+  }
+  .lg-slogan {
+    font-size: 12px;
+  }
+  .log-img {
+    width: 380px;
+  }
+  .h1-head{
+    font-size: 40px !important;
+
+  }
+  .wave-container {
+    height: 40px;
+    width: 90px;
+  }
+  .wave {
+    width: 6px;
+    padding: 0;
+  }
+  .formbox .form{
+    padding-left: 40px;
+  }
+ 
+  .nav-btn {
+    font-size: 22px;
+    padding: 10px 30px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 780px) {
+
+  .Login-header {
+    flex-direction: column;
+  }
+  .line{
+    display: none;
+  }
+   .log-img {
+    width: 420px;
+  
+  }
+  .h1-head{
+    font-size: 40px !important;
+
+  }
+  .wave-container {
+    height: 35px;
+    width: 80px;
+  }
+  .wave {
+    width: 7px;
+    padding: 0;
+  }
+ 
+  .formbox .form{
+    padding-left: 0;
+  }
+  .form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+    justify-content: center !important;
+    align-items: center !important;
   }
-  .Login-header .h1{
-    width: 650px;
-    padding: 50px 50px;
-    background-color: rgb(5, 195, 151);
-   font-size: 55px;
-   font-weight: bold;
+  .mb-3 input{
+    max-width: 420px !important;
   }
-   
-  .Login-header .form{
-    width: 650px;
-    height: 650px;
-    background-color: #fff;
+  .nav-btn {
+    font-size: 22px;
+    padding: 10px 30px;
   }
-  .Login-header .form .form-label{
-    margin-right: 300px;
-    margin-top: 50px;
-    color:rgb(5, 195, 151) ;
+}
+@media screen and (min-width: 350px) and (max-width: 480px) {
+  .log-img {
+    width: 360px;
+
   }
-  .Login-header .form .form-control{
-    border: none;
-    border-bottom:4px solid  rgb(5, 195, 151) ;
-    width: 500px;
-     margin-left: 100px;
-     box-shadow: none;
-     font-size: 25px;
+
+  .line{
+    display: none;
   }
-  .Login-header .form button{
-    margin-top: 50px;
-    background-color: rgb(5, 195, 151);
-    padding: 15px 0;
-    width: 500px;
+  .Login-header {
+    flex-direction: column;
+  }
+  .h1-head{
+    font-size: 30px !important;
+
+  }
+  .lg-text {
     font-size: 25px;
-    font-weight: bold;
+    text-align: left;
   }
-  .Login-header .form .Error{
-    color: crimson;
+  .lg-slogan {
+    font-size: 12px;
   }
-  .Login-header .form .form-text{
+ 
+  .wave-container {
+    height: 35px;
+    width: 70px;
+  }
+  .wave {
+    width: 5px;
+    padding: 0;
+  }
+  .form-control{
+    font-size: 17px !important;
+  }
+  .formbox .form{
+    padding-left: 0;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .nav-btn {
+    font-size: 20px;
+    padding: 10px 30px;
+  }
+  .navigate-link{
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 240px) and (max-width: 350px) {
+  .log-img {
+    width: 280px;
+  }
+  .Login-header {
+    flex-direction: column;
+  }
+  .line{
+    display: none;
+  }
+  .h1-head{
+    font-size: 22px !important;
+
+  }
+  .form-control{
+    font-size: 14px !important;
+  }
+  .formbox .form{
+    padding-left: 0;
+  }
+  .lg-text {
     font-size: 15px;
-    margin-right: 100px;
+    text-align: left;
   }
+  .lg-slogan {
+    font-size: 8px;
+  }
+  
+  .wave-container {
+    height: 30px;
+    width: 50px;
+  }
+  .wave {
+    width: 3px;
+    border-radius: 10px;
+  }
+
+  .nav-btn {
+    font-size: 16px;
+    padding: 8px 25px;
+  }
+  .navigate-link{
+    font-size: 12px;
+  }
+}

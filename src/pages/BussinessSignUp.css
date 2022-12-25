@@ -1,10 +1,6 @@
-
-
-
-
-
-
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 * {
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,60 +9,90 @@
 a {
   text-decoration: none;
 }
+body {
+  background-color: #eaeefd;
+}
 
 body,
 html {
   overflow-x: hidden;
 }
-.SignUp{
+.SignUp {
   height: 100vh;
   display: flex;
   flex-direction: column;
-
 }
 
-.SignUp-header{
+.SignUp-header {
   display: flex;
   padding-top: 45px;
   width: 100%;
-  
 }
-.signup-img img{
+.sign-img{
+  animation: animation 1.6s ease-in-out 3s infinite alternate-reverse both;
+  animation-delay: 2s;
   max-width: 500px;
 }
-.signup-img{
-flex: 1;
 
-  max-height: 450px;
+@keyframes animation {
+  0% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(-6 px);
+  }
+}
+.signup-imgbox {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.formbox{
+.formbox {
   flex: 1;
-
+  padding: 25px;
   max-height: 450px;
   display: flex;
   flex-direction: column;
-  justify-content:start;
+  justify-content: start;
   text-align: left;
- 
+  animation: leftslide 3s ease-in-out   alternate-reverse both;
 
- 
+}
+@keyframes leftslide {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(850px);
+  }
 }
 
-.form form{
+.form {
   width: 100%;
-  padding: 25px;
+   padding-left: 80px;
 }
 
-.h1 h1{
- font-size: 30px;
- padding: 15px 0;
-}
+.h1  {
+ 
+  padding: 15px;
+  max-width: 350px;
+  justify-content: center;
+  display: flex;
 
-.form input{
+
+}
+.h1-head{
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 50px;
+}
+.h1 img {
+  width: 65px;
+  margin-left: 10px;
+}
+.form input {
   max-width: 350px;
   font-size: 20px;
   background-color: transparent;
@@ -75,30 +101,276 @@ flex: 1;
   border-bottom: 1px solid #000;
   border-radius: 0;
 }
-.form input:focus{
+.form input:focus {
   background-color: transparent;
-  border: 2px solid black ;
+  border: 2px solid black;
+  border-radius: 8px;
 }
-.mb-3{
-  
+.mb-3 {
   padding-bottom: 12px;
-}
-.my-3 .Avatar{
-
-display: block;
+  margin-bottom: 10px;
 
 }
-.signup-btn{
+.my-3 .Avatar {
+  display: block;
+}
+.signup-btn {
+  font-family: 'Caveat', cursive;
+  
   width: 100%;
   display: flex;
-  justify-content: flex-start;
-  padding-bottom: 35px;
+  justify-content: center;
+  padding-bottom: 15px;
+  max-width: 350px;
 }
 
-.avatar-box{
-display: flex;
-justify-content: flex-start;
+.avatar-box {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 350px;
+  
 }
+.avatar-box span{
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  font-weight: 600;
+  padding-left: 8px;
+
+}
+.av-img{
+  width: 55px;
+}
+form p {
+  max-width: 350px;
+  text-align: center;
+  margin: 0 !important;
+}
+.line {
+  margin-top: 43px;
+  width: 3px;
+  height: 400px;
+  background-color: gray  ;
+  border-radius: 50px;
+}
+.Error{
+  color: red;
+  font-family: 'Caveat', cursive;
+  max-width: 350px;
+  text-align: center;
+  font-size: 18px;
+  margin: 0 !important;
+
+}
+
+/* media queries for respomnsive */
+@media screen and (max-width: 1150px) {
+
+  .lg-text {
+    font-size: 30px;
+    text-align: left;
+  }
+  .lg-slogan {
+    font-size: 15px;
+  }
+  .sign-img {
+    width: 400px;
+  }
+  .wave-container {
+    height: 40px;
+    width: 100px;
+  }
+  .wave {
+    width: 8px;
+    padding: 0;
+  }
+  .nav-btn {
+    font-size: 22px;
+    padding: 10px 35px;
+  }
+}
+@media screen and (max-width: 950px) {
+ 
+  .lg-text {
+    font-size: 30px;
+    text-align: left;
+  }
+  .lg-slogan {
+    font-size: 12px;
+  }
+  .sign-img {
+    width: 380px;
+  }
+  .h1-head{
+    font-size: 40px !important;
+
+  }
+  .wave-container {
+    height: 40px;
+    width: 90px;
+  }
+  .wave {
+    width: 6px;
+    padding: 0;
+  }
+  .formbox .form{
+    padding-left: 40px;
+  }
+ 
+  .nav-btn {
+    font-size: 22px;
+    padding: 10px 30px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 780px) {
+
+  .SignUp-header {
+    flex-direction: column;
+  }
+  .line{
+    display: none;
+  }
+   .sign-img {
+    width: 420px;
+  
+  }
+  .h1-head{
+    font-size: 40px !important;
+
+  }
+  .wave-container {
+    height: 35px;
+    width: 80px;
+  }
+  .wave {
+    width: 7px;
+    padding: 0;
+  }
+ 
+  .formbox .form{
+    padding-left: 0;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .mb-3 input{
+    max-width: 420px !important;
+  }
+  .nav-btn {
+    font-size: 22px;
+    padding: 10px 30px;
+  }
+}
+@media screen and (min-width: 350px) and (max-width: 480px) {
+  .sign-img {
+    width: 360px;
+
+  }
+
+  .line{
+    display: none;
+  }
+  .SignUp-header {
+    flex-direction: column;
+  }
+  .h1-head{
+    font-size: 30px !important;
+
+  }
+  .lg-text {
+    font-size: 25px;
+    text-align: left;
+  }
+  .lg-slogan {
+    font-size: 12px;
+  }
+ 
+  .wave-container {
+    height: 35px;
+    width: 70px;
+  }
+  .wave {
+    width: 5px;
+    padding: 0;
+  }
+  .form-control{
+    font-size: 17px !important;
+  }
+  .formbox .form{
+    padding-left: 0;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .nav-btn {
+    font-size: 20px;
+    padding: 10px 30px;
+  }
+  .navigate-link{
+    font-size: 14px;
+  }
+  .av-img{
+    width: 50px;
+  }
+}
+@media screen and (min-width: 240px) and (max-width: 350px) {
+  .sign-img {
+    width: 280px;
+  }
+  .SignUp-header {
+    flex-direction: column;
+  }
+  .line{
+    display: none;
+  }
+  .h1-head{
+    font-size: 22px !important;
+
+  }
+  .form-control{
+    font-size: 14px !important;
+  }
+  .formbox .form{
+    padding-left: 0;
+  }
+  .lg-text {
+    font-size: 15px;
+    text-align: left;
+  }
+  .lg-slogan {
+    font-size: 8px;
+  }
+  
+  .wave-container {
+    height: 30px;
+    width: 50px;
+  }
+  .wave {
+    width: 3px;
+    border-radius: 10px;
+  }
+
+  .nav-btn {
+    font-size: 16px;
+    padding: 8px 25px;
+  }
+  .navigate-link{
+    font-size: 12px;
+  }
+  .av-img{
+    width: 40px;
+  }
+}
+
+
+
+
+
 
 
 

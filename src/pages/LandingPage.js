@@ -1,7 +1,7 @@
 import React from "react";
 import "./landingpage.css";
 import HI from "../img/home.gif";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
@@ -19,8 +19,10 @@ const LandingPage = () => {
             </div>
 
             <div>
-              <h1 className="lg-text">TalkTastic</h1>
-              <p className="lg-slogan">connect with the world</p>
+             <Link to="/"> <h1 className="lg-text">TalkTastic</h1>
+             <p className="lg-slogan">connect with the world</p>
+
+             </Link>
             </div>
           </div>
 
@@ -37,9 +39,9 @@ const LandingPage = () => {
               </p>
             </div>
             <div className=" start-btn">
-              <NavLink className="nav-btn " to="/SignUp">
+              <Link className="nav-btn " to="/SignUp">
                 Get Started
-              </NavLink>
+              </Link>
             </div>
           </div>
           <div className="right-div">

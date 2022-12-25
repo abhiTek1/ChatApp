@@ -2,6 +2,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
 
 * {
   margin: 0;
@@ -19,8 +20,6 @@ html {
 }
 body {
   background-color: #eaeefd;
-  /* background-color:whitesmoke; */
-
 }
 
 .nav {
@@ -89,10 +88,11 @@ body {
   font-size: 40px;
   font-weight: bolder;
   margin: 0;
+  color: #000;
 }
 .lg-slogan {
   font-family: "Bebas Neue", cursive;
-
+  color: #000;
   font-weight: 500;
   font-size: 20px;
   text-align: left;
@@ -101,18 +101,7 @@ body {
   padding-top: 10px;
   margin: 0;
 }
-.nav-btn {
-  padding: 10px 40px;
-  font-size: 20px;
-  color: black;
-  font-weight: 600;
-  background: rgba(50, 114, 212, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
+
 .down-wrapper {
   display: flex;
   align-items: center;
@@ -126,6 +115,21 @@ body {
   justify-content: flex-start;
   display: flex;
   flex-direction: column;
+}
+
+.left-div{
+  animation: rightslide 4s ease-in-out 0.5s  alternate-reverse both;
+ 
+}
+@keyframes rightslide {
+  0% {
+    transform: translateX(0px);
+
+  }
+  100% {
+    transform: translateX(-680px);
+
+  }
 }
 
 .home-img {
@@ -162,6 +166,29 @@ body {
   padding-bottom: 35px;
 }
 
+.nav-btn {
+  font-family: "Caveat", cursive;
+  padding: 9px 50px;
+  font-size: 25px;
+  color: black;
+  font-weight: 700;
+  background: rgba(50, 114, 212, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  /* background: rgba( 7, 7, 101, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 30px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+}
+.nav-btn:hover {
+  color: black;
+}
+
 /* media quroes for responsive */
 
 @media screen and (max-width: 1150px) {
@@ -187,7 +214,7 @@ body {
     padding: 0;
   }
   .nav-btn {
-    font-size: 18px;
+    font-size: 22px;
     padding: 10px 35px;
   }
 }
@@ -216,7 +243,7 @@ body {
     padding: 0;
   }
   .nav-btn {
-    font-size: 17px;
+    font-size: 22px;
     padding: 10px 30px;
   }
 }
@@ -249,12 +276,9 @@ body {
     width: 7px;
     padding: 0;
   }
+
   .nav-btn {
-    font-size: 17px;
-    padding: 10px 30px;
-  }
-  .nav-btn {
-    font-size: 16px;
+    font-size: 22px;
     padding: 10px 30px;
   }
 }
@@ -293,7 +317,7 @@ body {
     padding-top: 0;
   }
   .nav-btn {
-    font-size: 14px;
+    font-size: 20px;
     padding: 10px 30px;
   }
 }
@@ -332,7 +356,7 @@ body {
     padding-top: 0;
   }
   .nav-btn {
-    font-size: 12px;
+    font-size: 16px;
     padding: 8px 25px;
   }
 }

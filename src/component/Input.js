@@ -112,7 +112,8 @@ function funset()
       },
       [data.chatId + ".date"]: serverTimestamp(),
     });
-
+    setText("");
+    setImg(null);
     setText("");
     setImg(null);
   };

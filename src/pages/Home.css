@@ -141,6 +141,7 @@ font-weight: 500;
 .search {
   background-color: whitesmoke;
 }
+
 .search .searchForm {
   padding: 10px;
   margin-bottom: 15px;
@@ -167,7 +168,35 @@ font-weight: 500;
 .search input:hover {
   background-color: whitesmoke;  
 }
+.navimg{
+  margin-right: 20px;
+  background-image: url("https://images.unsplash.com/photo-1567446537708-ac4aa75c9c28?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZW1vaml8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
 
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  
+}
+.userChat{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #4f93e3;
+  background-color: white;
+  height: 70px;
+  padding-top: 5px;
+  gap: 25px;
+  color: #4f93e3;
+  cursor: pointer;
+}
+.userChat img {
+  margin-left: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 /* User Deatail div of user */
 .home-container .chats .mob-view{
    display: none;               /*  new */

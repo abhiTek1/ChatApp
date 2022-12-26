@@ -45,8 +45,10 @@ const Chats = () => {
           onClick={() => handleSelect(chat[1].userInfo)}
         >
           <div className="in-container">
-          
-        <img src={chat[1].userInfo.photoURL} alt=""  onError={(event) => event.target.style.display = 'none'} />
+          <div className="navimg">
+          <img src={chat[1].userInfo.photoURL} alt=""  onError={(event) => event.target.style.display = 'none'} />
+
+          </div>
 
         
           <div className="userChatInfo">

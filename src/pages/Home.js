@@ -10,10 +10,10 @@ const Home = () => {
   return (
     <div className='home'>
     <Navbar/>
-    <div className='home-container d-flex flex-md-row flex-column'>
+    <div className='home-container'>
         <Sidebar/>
         <Chat/>
-        <View/>
+        {/* <View/> */}
     </div> 
     </div>
   )

@@ -1,8 +1,14 @@
 import { doc, onSnapshot } from "firebase/firestore";
 import React, { useContext, useEffect, useState } from "react";
 import { ChatContext } from "../context/ChatContext";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import { db } from "../Firebase";
+import Input from "./Input";
 import Message from "./massage";
+import Cam from "../img/cam.png";
+import Add from "../img/add.png";
+import More from "../img/more.png";
+import { Link } from "react-router-dom";
 
 const Messages = () => {
   const [messages, setMessages] = useState([]);
@@ -18,14 +24,30 @@ const Messages = () => {
     };
   }, [data.chatId]);
 
-  console.log(messages)
+  console.log(messages);
 
   return (
-    <div className="messages">
-      {messages.map((m) => (
-        <Message message={m} key={m.id} />
-      ))}
-    </div>
+    <>
+    
+      <div className="chatInfo">
+        <div className="div">
+         <Link><AiOutlineArrowLeft/></Link>
+          <img src={data.user.photoURL} />
+          <span>{data.user?.displayName}</span>
+        </div>
+        <div className="chatIcons">
+          <img src={Cam} alt="" />
+          <img src={Add} alt="" />
+          <img src={More} alt="" />
+        </div>
+      </div>
+      <div className="messages">
+        {messages.map((m) => (
+          <Message message={m} key={m.id} />
+        ))}
+      </div>
+      <Input />
+    </>
   );
 };
 

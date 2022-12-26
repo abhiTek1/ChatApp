@@ -9,6 +9,7 @@ body html {
  
   align-items: center;
   justify-content: center;
+
 }
 
 .Navbar {
@@ -16,31 +17,9 @@ body html {
   align-items: center;
   background-color: #4f93e3;
   height: 60px;
-  padding: 12px;
+  padding: 10px;
   justify-content: space-between;
   color: #ddddf7;
-}
-
-.modal-box .View .container{
-  margin: 0 !important;
-}
-
-.modal-box .modal-content{
-  max-width: 400px;
-  max-height: 500px;
-  display: flex;
-  flex-direction:column;
-  justify-content: center;
-}
-.modal-box .modal-title  {
- font-size: 25px !important;
- font-family: "Prata", serif;
-
-}
-.modal-box .modal-body  {
-  align-items: center;
-  justify-content: center;
-  display: flex;
 }
 .Navbar .logo {
   color: whitesmoke;
@@ -48,7 +27,7 @@ body html {
 }
 .Navbar .logo h1 {
   color: whitesmoke;
-  font-size: 25px;
+  font-size: 3vmin;
   font-family: "Prata", serif;
   margin: 0;
 }
@@ -93,10 +72,13 @@ font-weight: 500;
   overflow: auto;
 }
 .home-container .chat {
-  flex: 75%;
+  flex: 50%;
   border-right: 1px solid #4f93e3;
 }
-
+.home-container .View {
+  flex: 25%;
+  background-color: whitesmoke;
+}
 
 /* View of user data */
 
@@ -128,11 +110,14 @@ font-weight: 500;
 }
 .View .container p {
   margin-top: 10px;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 500;
   font-family: "Prata", serif;
   color: #2f2f42;}
 
+  .View .container:hover{
+    background-color:#4f93e3 ;
+  }
 /* Search of user */
 
 .search {
@@ -159,12 +144,29 @@ font-weight: 500;
   outline: none;
 }
 .search input::placeholder {
-  color: #a3a3b1;
+  color: #4f93e3;
 }
 .search input:hover {
   background-color: #efeff1;
 }
-
+.userChat{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #4f93e3;
+  background-color: whitesmoke;
+  height: 70px;
+  padding-top: 5px;
+  gap: 25px;
+  color: #4f93e3;
+  cursor: pointer;
+}
+.userChat img {
+  margin-left: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 /* User Deatail div of user */
 
 .chats .container {
@@ -177,7 +179,6 @@ font-weight: 500;
   gap: 25px;
   color: #4f93e3;
   cursor: pointer;
-  display: flex;
 }
 .container:hover {
   background-color: #e5e5f0;
@@ -209,7 +210,7 @@ font-weight: 500;
 /* Navbar of second user */
 
 .chatInfo {
-  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 20px -10px;
+  box-shadow: #4f93e3 0px 10px 20px -10px;
   height: 80px;
   background-color: #e2e8fa;
   display: flex;
@@ -254,7 +255,7 @@ font-weight: 500;
 .message .messageInfo {
   display: flex;
   flex-direction: column;
-  color: gray;
+  color: #4f93e3;
   font-weight: 300;
 }
 .message .messageInfo img {
@@ -277,23 +278,18 @@ font-weight: 500;
   max-width: 300px !important;
   overflow: hidden;
   height:auto !important;
-  background-color:white;
+  background-color:white ;
   margin-top: 30px;
   font-size: 2vmin;
   padding: 10px 20px;
   border-radius: 0px 10px 10px 20px;
-  max-width: max-content;
+    max-width: max-content;
 }
 
 .message .messageContent img {
   width: 50%;
   border: 2px solid white;
   border-radius:0px 10px 10px 10px;
-}
-.owner .messageContent img {
-  width: 50%;
-  border: 2px solid #4f93e3;
-  border-radius: 10px 0px 10px 10px ;
 }
 
 /*  Second user Chat */
@@ -310,10 +306,15 @@ font-weight: 500;
   height:auto !important;
   background-color: #4f93e3;
   margin-top: 30px;
-  color: #ddddf7;
+  color: white;
   padding: 10px 20px;
   border-radius: 10px 0px 20px 10px;
   max-width: max-content;
+}
+.owner .messageContent img {
+  width: 50%;
+  border: 2px solid #4f93e3;
+  border-radius: 10px 0px 10px 10px ;
 }
 
 /* Input from user  */
@@ -327,39 +328,35 @@ font-weight: 500;
   color: lightgray;
 }
 .input input {
+  margin-left: 10px;
+  width: 500px;
+  padding: 0px 10px 0px 10px;
+  height: 50px;
+  background-color:#eaeefd;
+  
   border: 1px solid #4f93e3;
   outline: none;
   color: #4f93e3;
   font-weight: 500;
   font-size: 3vmin;
-  margin-left: 10px;
-  width: 80%;
-  padding: 0px 10px 0px 10px;
-  height: 50px;
-  background-color:#eaeefd;
 }
 .input input::placeholder {
-  color: rgb(82, 80, 80);
+  color: rgb(181, 179, 179);
+  font-size: 2vmin;
 }
-.send1 {
-  position: absolute;
-  top: 200px;
-  right: 300px;
-}
-.send .emoji-icon {
-  position: fixed;
-  cursor: pointer;
-  bottom: 18px;
-  right: 430px;
-}
+ 
 .input .send {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 .input .send img {
-  height: 30px;
+  margin-left: 5px;
+  height: 25px;
   cursor: pointer;
+}
+.input .send label p{
+  width: 20px;
 }
 .input .send img:hover {
   content: "img";
@@ -375,18 +372,21 @@ font-weight: 500;
 }
 
 @media   screen and (max-width:1161px){
-
+  .View{
+    display: none;
+  }
   .home-container .sidebar{
     flex: 35%;
   }
   .home-container .chat{
   flex: 75%;
   }
- 
 
 }
 @media  screen and (min-width:768px)  and (max-width:850px){
- 
+  .View{
+    display: none;
+  }
   .home-container .sidebar{
     display: flex;
     flex-direction: column;
@@ -417,7 +417,9 @@ font-weight: 500;
   }
 }
 @media  screen and (min-width:590px)  and (max-width:768px){
- 
+  .View{
+    display: none;
+  }
   .home-container .sidebar{
     display: flex;
     flex-direction: column;
@@ -445,65 +447,16 @@ font-weight: 500;
   .input input {
     width: 200px;
   }
-  .modal-box .modal-content{
-    max-width: 400px;
-    max-height: 500px;
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-  }
-  .modal-box .modal-title  {
-   font-size: 25px !important;
-   font-family: "Prata", serif;
-  
-  }
-  .modal-box .modal-body  {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    width: 350px;
-  }
-  .modal-box .View .container{
-  width: 225px;
-  } 
-   .Navbar .user {
-    margin-right:20px;
-  }
 
 }
 
 @media  screen and (min-width:320px)  and (max-width:590px){
-  .modal-box .modal-content{
-    max-width: 350px;
-    max-height: 470px;
-  }
-  .Navbar .logo {
-    margin-left: 10px;
-  }
-  .Navbar .logo h1 {
-    font-size: 18px;
-  }
-  .Navbar .user {
-    margin-right: 10px;
-  }
-  .modal-box .modal-title  {
-   font-size: 25px !important;
-   font-family: "Prata", serif;
-  
-  }
-  .modal-box .modal-body  {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-  }
-
-  .emoji-modal .modal-body aside.EmojiPickerReact.epr-main{
-    width: 250px;
+  .View{
+    display: none;
   }
   .home-container{
     display: flex;
     flex-direction: column!important;
-    padding: 0;
 
   }
   /* .home-container .chat{

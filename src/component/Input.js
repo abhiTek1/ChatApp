@@ -1,14 +1,11 @@
 import React, { useContext, useState } from "react";
 import { FaTelegramPlane } from 'react-icons/fa';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import Img from "../img/img.png";
-import Ab from "../img/AbhiPic.jpeg";
-import Attach from "../img/attach.png";
+
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
-import EmojiPicker from 'emoji-picker-react';
 import Picker from 'emoji-picker-react';
+
 import {
   arrayUnion,
   doc,
@@ -23,7 +20,6 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 const Input = () => {
   const [text, setText] = useState("");
   const [img, setImg] = useState(null);
-  const [img1, setImg1] = useState(null);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -31,19 +27,9 @@ const Input = () => {
 
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
-  const photo=[Img,Ab]
-function funset()
-{
-  console.log("img set")
-  // setText(Ab)
-  setImg1(Ab)
-  
-  // handleSend()
-}
-const onEmojiClick = (event, emojiObject) => {
-  setText(prevInput => prevInput + emojiObject.emoji);
-  
-};
+   
+ 
+
 
   const handleSend = async () => {
     if (img ) {
@@ -61,7 +47,6 @@ const onEmojiClick = (event, emojiObject) => {
               messages: arrayUnion({
                 id: uuid(),
                 text,
-               
                 senderId: currentUser.uid,
                 date: Timestamp.now(),
                 img: downloadURL,
@@ -71,34 +56,6 @@ const onEmojiClick = (event, emojiObject) => {
         }
       );
     } 
-    // else if (img1 ) {
-    //   // console.log("img",img1)
-    //   const storageRef1 = ref(storage, uuid());
-
-    //   const uploadTask1 = uploadBytesResumable(storageRef1,img1);
-
-    //   uploadTask1.on(
-    //     (error) => {
-    //       //TODO:Handle Error
-    //     },
-    //     () => {
-    //       getDownloadURL(uploadTask1.snapshot.ref).then(async (downloadURL) => {
-    //         await updateDoc(doc(db, "chats", data.chatId), {
-    //           messages: arrayUnion({
-    //             id: uuid(),
-    //             text,
-               
-    //             senderId: currentUser.uid,
-    //             date: Timestamp.now(),
-    //             img1: downloadURL,
-    //           }),
-    //         });
-    //       });
-    //     }
-    //   );
-    // } 
-
-   
     else {
       
       await updateDoc(doc(db, "chats", data.chatId), {
@@ -126,28 +83,32 @@ const onEmojiClick = (event, emojiObject) => {
     });
     setText("");
     setImg(null);
-    setText("");
-    setImg(null);
   };
+
+
   return (
     <>
-     <Modal show={show} onHide={handleClose}>
+      <Modal className="emoji-modal" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Select emoji</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-      <Picker  onEmojiClick={(emojiObject)=> setText((prevMsg)=> prevMsg + emojiObject.emoji)} />
+        <Modal.Body>
+        <Picker  onEmojiClick={(emojiObject)=> setText((prevMsg)=> prevMsg + emojiObject.emoji)} />
+        </Modal.Body>
       </Modal>
     <div className="input">
       <input
         type="text" 
+        multiline
+        rows={5}
+        autoComplete="on"
         placeholder="Type something..."
         onChange={(e) => setText(e.target.value)}
         value={text}
       />
       <div className="send">
       {/* <EmojiPicker /> */}
-        <img src={Attach} alt="" onClick={handleShow}/>
+        <img src="https://icons.getbootstrap.com/assets/icons/emoji-smile.svg" alt="" onClick={handleShow}/>
         <input
           type="file"
           style={{ display: "none" }}
@@ -155,10 +116,10 @@ const onEmojiClick = (event, emojiObject) => {
           onChange={(e) => setImg(e.target.files[0])}
         />
         <label htmlFor="file">
-          <img src={Img} alt="" />
-          
+          <img src="https://icons.getbootstrap.com/assets/icons/image.svg" alt="" />
+           
         </label>
-        <button onClick={handleSend}><FaTelegramPlane/></button>
+        <img src="https://icons.getbootstrap.com/assets/icons/arrow-right-square-fill.svg" onClick={handleSend} />
       </div>
     </div>
     </>

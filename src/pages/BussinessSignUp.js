@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, storage } from "../Firebase";
 import { db } from "../Firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { collection, addDoc } from "firebase/firestore";
+import { setDoc ,doc } from "firebase/firestore";
 import "./BussinessSignUp.css";
 import Add from "../img/addAvatar.png";
 import SA from "../img/signanimate.gif";
@@ -26,45 +26,46 @@ function SignUp() {
       setErr("Fill all the Field");
        }else{
         
-    try {
-      //Create user
-      const res = await createUserWithEmailAndPassword(auth, email, password);
-
-      //Create a unique image name
-      const date = new Date().getTime();
-      const storageRef = ref(storage, `${displayName + date}`);
-
-      await uploadBytesResumable(storageRef, file).then(() => {
-        getDownloadURL(storageRef).then(async (downloadURL) => {
-          try {
-            //Update profile
-            await updateProfile(res.user, {
-              displayName,
-              photoURL: downloadURL,
+        try {
+            //Create user
+            const res = await createUserWithEmailAndPassword(auth, email, password);
+                // Signed in
+      
+            //Create a unique image name
+            const date = new Date().getTime();
+            const storageRef = ref(storage, `${displayName + date}`);
+      
+            await uploadBytesResumable(storageRef, file).then(() => {
+              getDownloadURL(storageRef).then(async (downloadURL) => {
+                try {
+                  //Update profile
+                  await updateProfile(res.user, {
+                    displayName,
+                    photoURL: downloadURL,
+                  });
+                  //create user on firestore
+                  await setDoc(doc(db, "users", res.user.uid), {
+                    uid: res.user.uid,
+                    displayName,
+                    email,
+                    photoURL: downloadURL,
+                  });
+      
+                  //create empty user chats on firestore
+                  await setDoc(doc(db, "userChats", res.user.uid), {});
+                  navigate("/home");
+                } catch (err) {
+                  console.log(err);
+                  setErr(true);
+                  setLoading(false);
+                }
+              });
             });
-            //create user on firestore
-            await addDoc(collection(db, "users"), {
-              uid: res.user.uid,
-              displayName,
-              email,
-              photoURL: downloadURL,
-            });
-
-            //create empty user chats on firestore
-            await addDoc(collection(db, "userChats"), {});
-            navigate("/home");
           } catch (err) {
             console.log(err);
             setErr(true);
             setLoading(false);
           }
-        });
-      });
-    } catch (err) {
-      setErr(true);
-      setLoading(false);
-    }
-
     }
   };
   return (

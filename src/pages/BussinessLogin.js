@@ -29,7 +29,7 @@ function Login() {
       }else if(e.message=== passerr){
         setErr("Invalid password");
       }else{
-        setErr(true);
+        setErr(e.message);
 
       }
       console.log(e.message);

@@ -20,14 +20,18 @@ const Message = ({ message }) => {
       className={`message ${message.senderId === currentUser.uid && "owner"}`}
     >
       <div className="messageInfo">
-        <img
+      <div className="navimg">
+      <img
           src={
             message.senderId === currentUser.uid
               ? currentUser.photoURL
               : data.user.photoURL
           }
           alt=""
+          onError={(event) => event.target.style.display = 'none'} 
         />
+      </div>
+        
         <span>{message.date.toDate().toTimeString().slice(0,8)}</span>
       </div>
       <div className="messageContent">

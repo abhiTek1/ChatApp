@@ -13,18 +13,26 @@ import SI from "../img/signup.gif";
 function SignUp() {
   const [err, setErr] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [fil,setFiles]=useState("../img/addAvatar.png")
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
+    console.log(fil)
     setLoading(true);
     e.preventDefault();
     const displayName = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
-    const file = e.target[3].files[0];
-    if(  !displayName|| !email || !password || !file){
+    const file = fil;
+   
+    if(  !displayName|| !email || !password){
       setErr("Fill all the Field");
-       }else{
+       }
+      //  else if(email.includes("@"))
+      //  {
+      //   setErr("Invalid Email")
+      //  }
+       else{
         
         try {
             //Create user
@@ -55,15 +63,16 @@ function SignUp() {
                   await setDoc(doc(db, "userChats", res.user.uid), {});
                   navigate("/home");
                 } catch (err) {
-                  console.log(err);
-                  setErr(true);
+                  console.log(err.message);
+                    alert(err.message)
+                  setErr(err.message);
                   setLoading(false);
                 }
               });
             });
           } catch (err) {
             console.log(err);
-            setErr(true);
+            setErr(err.message);
             setLoading(false);
           }
     }
@@ -131,19 +140,26 @@ function SignUp() {
                   placeholder="Enter password"
                 ></input>
               </div>
-              <div className=" avatar-box">
-                <input
+              <div className="filesignup ">
+                <input  className=""
                   
-                  style={{ display: "none" }}
+                  // style={{ display: "none" }}
                   type="file"
                   id="file"
-                />
+                  accept="image/*"
+                  alt=""
+                  
+                // value="../img/abhiPic.jpeg"
+                onChange={(e)=>setFiles(e.target.files[0])}
+                  
+                  />
+                <br />
                 <label htmlFor="file" className="my-3 Avatar">
-                  <img  className="av-img"src={Add} alt="" />
+                  {/* <img  className="av-img"src={Add} alt="" /> */}
                   <span>Add an Avatar</span>
                 </label>
               </div>
-              <div className=" signup-btn">
+              <div className=" signup-btn mt-5">
                 <button disabled={loading} type="submit" className="nav-btn">
                   Submit
                 </button>

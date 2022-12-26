@@ -59,7 +59,8 @@ return(
       </Modal>
         <div className="container">
         <BsThreeDots   onClick={handleShow}/>
-            <img src={currentUser.photoURL} alt=''/>
+        
+            <img src={currentUser.photoURL} alt=''  onError={(event) => event.target.style.display = 'none'}/>
             <span>{currentUser.displayName}</span>
 
             <p className=""> {currentUser.email}</p>

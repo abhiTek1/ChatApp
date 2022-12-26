@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 * {
 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -98,7 +99,7 @@ html {
 
 }
 .h1-head{
-  font-family: 'Caveat', cursive;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 50px;
 }
@@ -128,18 +129,19 @@ html {
 
 
 .login-btn {
-  font-family: 'Caveat', cursive;
+ font-family: 'Roboto', sans-serif;
   
   width: 100%;
   display: flex;
   justify-content: center;
   padding-bottom: 15px;
   max-width: 350px;
+  
 }
 
 .Error{
   color: red;
-  font-family: 'Caveat', cursive;
+ font-family: 'Roboto', sans-serif;
   max-width: 350px;
   text-align: center;
   font-size: 18px;
@@ -176,6 +178,7 @@ form p {
   .nav-btn {
     font-size: 22px;
     padding: 10px 35px;
+    border: none;
   }
 }
 @media screen and (max-width: 950px) {

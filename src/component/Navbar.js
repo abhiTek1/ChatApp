@@ -27,8 +27,11 @@ const Navbar = () => {
     <div className='  Navbar'>
     <span className='logo'>
     
-              <img onClick={handleShow}  src={currentUser.photoURL} alt=''/>
+<div className='navimg' onClick={handleShow}>
 
+<img   src={currentUser.photoURL} alt=''  onError={(event) => event.target.style.display = 'none'}  />
+
+</div>
     <h1 className="lg-text2">TalkTastic</h1>
     </span>
     <div className='user'>

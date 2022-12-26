@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import LandingPage from './pages/LandingPage';
 import './App.css';
+import Messages from './component/Massages';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<LandingPage/>}/>
          <Route path="/SignUp" element={<BussinessSignUp/>}/>
          <Route path="/Login" element={<BussinessLogin/>}/>
+         <Route path="/chat" element={<Messages/>}/>
          <Route path="/home" index element={
                <ProtectedRoute>
                 <Home />

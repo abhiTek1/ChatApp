@@ -79,15 +79,9 @@ font-weight: 500;
   border: none;
   cursor: pointer;
 }
-
-.Navbar .user :hover {
-    
-  /* background-color: white;
-  color:#4f93e3; */
-  border-bottom: 2px solid white;
-  
-}
 /* Sidebar       */
+
+
 .home-container {
   display: flex;
   padding: 0;
@@ -95,21 +89,22 @@ font-weight: 500;
   height: 91vh;
 }
 .home-container .sidebar {
-  border-right: 1px solid #4f93e3;
+  border-right: 1px solid #5d5b8d;
   flex: 25%;
   background-color: whitesmoke;
   overflow: auto;
 }
 .home-container .chat {
   flex: 75%;
-  border-right: 1px solid #4f93e3;
+  border-right: 1px solid #5d5b8d;
 }
+
 
 
 /* View of user data */
 
 .View .container {
-  box-shadow: #4f93e3 0px 5px 15px;
+  box-shadow: #5d5b8d 0px 5px 15px;
   width: 250px;
   height:350px;
   display: flex;
@@ -117,11 +112,11 @@ font-weight: 500;
   align-items: center;
   justify-content: center;
   margin-top: 100px;
-  border: 1px solid #4f93e3;
+  border: 1px solid #5d5b8d;
   border-radius: 35px;
 }
 .View .container img {
-  border: 2px solid #4f93e3;
+  border: 2px solid #5d5b8d;
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -136,7 +131,7 @@ font-weight: 500;
 }
 .View .container p {
   margin-top: 10px;
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 500;
   font-family: "Prata", serif;
   color: #2f2f42;}
@@ -156,36 +151,46 @@ font-weight: 500;
 .search input {
   box-sizing: border-box;
   padding-left: 35px;
-  background-color: #eaeefd;
-  border: 1px solid #4f93e3;
+  background-color: whitesmoke; 
+  border: 1px solid #5d5b8d;
   border-radius: 25px;
   font-size: 14px;
   height: 40px;
   width: 100%;
   font-weight: 500;
-  color: #4f93e3;
+  color: #5d5b8d;
   outline: none;
 }
 .search input::placeholder {
-  color: #a3a3b1;
+  color: black;  
 }
 .search input:hover {
-  background-color: #efeff1;
+  background-color: whitesmoke;  
 }
 
 /* User Deatail div of user */
+.home-container .chats .mob-view{
+   display: none;               /*  new */
+  
+
+}
+.in-container{
+  display: flex;                      /*  new */
+  align-items: center;
+}
 
 .chats .container {
-  display: flex;
+
   align-items: center;
-  border-bottom: 1px solid #4f93e3;
+  border-bottom: 1px solid #5d5b8d;
   background-color: whitesmoke;
   height: 70px;
   padding-top: 5px;
   gap: 25px;
-  color: #4f93e3;
+  color: #5d5b8d;
   cursor: pointer;
   display: flex;
+  justify-content: space-between;     /*  new */
 }
 .container:hover {
   background-color: #e5e5f0;
@@ -198,20 +203,23 @@ font-weight: 500;
 }
 .userChatInfo {
   text-align: left;
+  padding-left: 18px;       /*  new */
+
 }
 .userChatInfo span {
   font-family: "Prata", serif;
   font-size: 18px;
   font-weight: 500;
-  color: black;
+  color: #5d5b8d;
   opacity: 1;
 }
 .userChatInfo p {
+  margin-bottom: 0;    /*  new */
   font-size: 12px;
   max-width: 150px;
   max-height: 16px;
   overflow: hidden;
-  color: black;
+  color: #5d5b8d;
 }
 
 /* Navbar of second user */
@@ -225,19 +233,26 @@ font-weight: 500;
   justify-content: space-between;
   padding: 10px;
 }
-.chatInfo .div {
-  margin-left: 20px;
-}
+
 .chatInfo .div img {
-  margin-right: 20px;
+  margin: 0 20px;     
   width: 60px;
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
+
+}
+.chatInfo .inner-chatInfo{
+  display: flex;
+  align-items: center;   
+}
+.chatInfo a{
+      
+  display: none;
 }
 .chatInfo .div span {
-  font-size: 2.5vmin;
-  color: #4f93e3;
+  font-size: 22px;
+  color: #5d5b8d;
 }
 .chatInfo .chatIcons {
   gap: 50px;
@@ -253,6 +268,8 @@ font-weight: 500;
   padding: 10px;
   height: calc(100% - 160px);
   overflow: auto;
+  /* margin-bottom: 80px; */
+
 }
 .message {
   display: flex;
@@ -272,7 +289,7 @@ font-weight: 500;
   object-fit: cover;
 }
 .message .messageInfo span {
-  color: #4f93e3;
+  color: #5d5b8d;
   font-weight: 400;
 }
 .message .messageContent {
@@ -285,23 +302,16 @@ font-weight: 500;
   max-width: 300px !important;
   overflow: hidden;
   height:auto !important;
-  background-color:white;
+  background-color:whitesmoke ;
   margin-top: 30px;
   font-size: 2vmin;
   padding: 10px 20px;
-  border-radius: 0px 10px 10px 20px;
-  max-width: max-content;
+  border-radius: 10px 0px 20px 10px;
+    max-width: max-content;
 }
 
 .message .messageContent img {
   width: 50%;
-  border: 2px solid white;
-  border-radius:0px 10px 10px 10px;
-}
-.owner .messageContent img {
-  width: 50%;
-  border: 2px solid #4f93e3;
-  border-radius: 10px 0px 10px 10px ;
 }
 
 /*  Second user Chat */
@@ -316,7 +326,7 @@ font-weight: 500;
   max-width: 300px !important;
   overflow: hidden;
   height:auto !important;
-  background-color: #4f93e3;
+  background-color: #323b58;
   margin-top: 30px;
   color: #ddddf7;
   padding: 10px 20px;
@@ -331,23 +341,24 @@ font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  /* padding: 10px; */
   color: lightgray;
 }
 .input input {
-  border: 1px solid #4f93e3;
-  outline: none;
-  color: #4f93e3;
-  font-weight: 500;
-  font-size: 3vmin;
   margin-left: 10px;
-  width: 80%;
+  width: 400px;
   padding: 0px 10px 0px 10px;
+  border-radius: 50px;
   height: 50px;
-  background-color:#eaeefd;
+  background-color:whitesmoke;  
+  
+  border: 1px solid black;
+  outline: none;
+  font-weight: 500;
+  font-size: 22px;   
 }
 .input input::placeholder {
-  color: rgb(82, 80, 80);
+  color: black;    
 }
 .send1 {
   position: absolute;
@@ -476,13 +487,26 @@ font-weight: 500;
   } 
    .Navbar .user {
     margin-right:20px;
-
+  }
+  
+  .input input{
+    font-size: 16px;   
+   
   }
   
 
 }
 
 @media  screen and (min-width:320px)  and (max-width:590px){
+  .home-container .sidebar{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .home-container .chat{
+        display:none;
+    
+  }
   .modal-box .modal-content{
     max-width: 350px;
     max-height: 470px;
@@ -516,15 +540,41 @@ font-weight: 500;
     padding: 0;
 
   }
-  /* .home-container .chat{
-   display: flex;
-   flex-direction: column;
-   flex: 0.5 !important;
-  }
-  .home-container .sidebar{
+  .home-container .chats .mob-view{
+    /*  new */
+flex: 10%;
+display: flex;
+}
+  .in-container{
     display: flex;
-    flex-direction: column;
-    flex: 2 !important;
+    flex: 80%;                        /*  new */
+    align-items: center;
   }
-   */
+  .chatInfo a{
+    color: black;     /*  new */
+  font-size: 25px;
+  display: flex; 
+
+  }
+  .chatInfo{
+    position: fixed;
+    width: 100%;
+  }
+  .input input{
+    font-size: 14px;   
+   
+  }
+
+  .input {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+
+
+  }
+  .messages{
+    margin-bottom: 80px;
+  }
+
 }

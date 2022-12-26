@@ -2,11 +2,12 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+ 
 }
 
 a {
@@ -90,6 +91,7 @@ body {
   font-size: 40px;
   font-weight: bolder;
   margin: 0;
+  text-align: left;
 }
 .lg-slogan {
   font-family: "Bebas Neue", cursive;
@@ -148,12 +150,17 @@ body {
 .para {
   padding: 25px;
 }
+.para p h1{
+  font-weight: 700;
+  font-size: 50px;
+  font-family: 'Caveat', cursive;
+}
 .para p {
     margin-top: 60px;
   max-width: 600px;
   margin-bottom: 55px;
   font-weight: 400;
-  font-family: "Satisfy", cursive;
+  font-family: 'Roboto', sans-serif !important;
   font-size: 22px;
   line-height: 0.8cm;
   text-align: left;
@@ -200,6 +207,10 @@ body {
     padding-top: 65px;
     line-height: 0.7cm;
   }
+  .para p h1{
+    font-size: 35px;
+    
+  }
   .lg-text {
     font-size: 30px;
     text-align: left;
@@ -240,6 +251,10 @@ body {
   .right-div {
     padding: 0;
     justify-content: center;
+  }
+  .para p h1{
+    font-size: 30px;
+    
   }
   .para {
     padding: 0 25px;
@@ -290,6 +305,10 @@ body {
     width: 5px;
     padding: 0;
   }
+  .para p h1{
+    font-size: 25px;
+    
+  }
   .para p {
     font-size: 15px;
     line-height: 0.6cm;
@@ -328,6 +347,10 @@ body {
   .wave {
     width: 3px;
     border-radius: 10px;
+  }
+  .para p h1{
+    font-size: 20px;
+    
   }
   .para p {
     font-size: 12px;

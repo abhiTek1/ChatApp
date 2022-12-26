@@ -20,9 +20,10 @@ import {
           return {
             user: action.payload,
             chatId:
-              currentUser.uid > action.payload.uid
-                ? currentUser.uid + action.payload.uid
-                : action.payload.uid + currentUser.uid,
+            (currentUser.displayName+currentUser.uid) > (action.payload.displayName+action.payload.uid)
+                ? (currentUser.displayName+currentUser.uid) + (action.payload.displayName+action.payload.uid)
+                :(action.payload.displayName+action.payload.uid) +(currentUser.displayName+currentUser.uid),
+          
           };
   
         default:

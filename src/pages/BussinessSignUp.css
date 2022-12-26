@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 * {
 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -92,13 +93,30 @@ html {
   width: 65px;
   margin-left: 10px;
 }
-.form input {
+.form input[type="text"],input [type="email"] {
   max-width: 350px;
   font-size: 20px;
   background-color: transparent;
   border: none;
   outline: none;
   border-bottom: 1px solid #000;
+  border-radius: 0;
+}
+.form input[type="password"]{
+  max-width: 350px;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #000;
+  border-radius: 0;
+}
+.form input[type="file"]{
+  max-width: 350px;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
   border-radius: 0;
 }
 .form input:focus {
@@ -115,6 +133,7 @@ html {
   display: block;
 }
 .signup-btn {
+  margin-top: 30px;
   font-family: 'Caveat', cursive;
   
   width: 100%;

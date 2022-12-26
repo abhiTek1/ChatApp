@@ -9,10 +9,20 @@ import Cam from "../img/cam.png";
 import Add from "../img/add.png";
 import More from "../img/more.png";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const Messages = () => {
   const [messages, setMessages] = useState([]);
   const { data } = useContext(ChatContext);
+  const Navigate = useNavigate();
+
+
+  const handleBack=()=>{
+    Navigate("/home");
+    console.log("ho gaya");
+  }
+
 
   useEffect(() => {
     const unSub = onSnapshot(doc(db, "chats", data.chatId), (doc) => {
@@ -26,14 +36,17 @@ const Messages = () => {
 
   console.log(messages);
 
+
   return (
     <>
     
       <div className="chatInfo">
-        <div className="div">
-         <Link><AiOutlineArrowLeft/></Link>
+        <div className="div" onClick={()=>handleBack()} >
+        <div className="inner-chatInfo" >
+        <Link ><AiOutlineArrowLeft/></Link>
           <img src={data.user.photoURL} />
           <span>{data.user?.displayName}</span>
+        </div>
         </div>
         <div className="chatIcons">
           <img src={Cam} alt="" />

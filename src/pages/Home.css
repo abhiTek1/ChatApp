@@ -79,6 +79,14 @@ font-weight: 500;
   border: none;
   cursor: pointer;
 }
+
+.Navbar .user :hover {
+    
+  /* background-color: white;
+  color:#4f93e3; */
+  border-bottom: 2px solid white;
+  
+}
 /* Sidebar       */
 .home-container {
   display: flex;
@@ -468,7 +476,9 @@ font-weight: 500;
   } 
    .Navbar .user {
     margin-right:20px;
+
   }
+  
 
 }
 

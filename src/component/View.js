@@ -60,11 +60,11 @@ return(
         <div className="container">
         <BsThreeDots   onClick={handleShow}/>
             <img src={currentUser.photoURL} alt=''/>
-            <span> Name : {currentUser.displayName}</span>
+            <span>{currentUser.displayName}</span>
 
-            <p> {currentUser.email}</p>
+            <p className=""> {currentUser.email}</p>
             {/* <p>{currentUser.uid}</p> */}
-            <p> Email : {currentUser.email} </p>
+           
 
         </div>
     </div>

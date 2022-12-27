@@ -89,14 +89,14 @@ font-weight: 500;
   height: 91vh;
 }
 .home-container .sidebar {
-  border-right: 1px solid #5d5b8d;
+  border-right: 1px solid black;
   flex: 25%;
   background-color: whitesmoke;
   overflow: auto;
 }
 .home-container .chat {
   flex: 75%;
-  border-right: 1px solid #5d5b8d;
+  border-right: 1px solid black;
 }
 
 
@@ -104,7 +104,7 @@ font-weight: 500;
 /* View of user data */
 
 .View .container {
-  box-shadow: #5d5b8d 0px 5px 15px;
+  box-shadow: black 0px 5px 15px;
   width: 250px;
   height:350px;
   display: flex;
@@ -112,11 +112,11 @@ font-weight: 500;
   align-items: center;
   justify-content: center;
   margin-top: 100px;
-  border: 1px solid #5d5b8d;
+  border: 1px solid black;
   border-radius: 35px;
 }
 .View .container img {
-  border: 2px solid #5d5b8d;
+  border: 2px solid black;
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -145,21 +145,45 @@ font-weight: 500;
 .search .searchForm {
   padding: 10px;
   margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 50px;
+  margin: 8px;
+  padding: 0px
+}
+.go{
+  font-size: 30px;
+  padding: 0 8px;
+  border: 1px solid #4f93e3;
+  color: #4f93e3;
+  border-radius: 50px;
+  margin-right: 10px;
+  cursor: pointer;
+  
+}
+.go:hover{
+  background-color: #4f93e3;
+  color: white;
+  animation: 0.2s ease-in-out;
+  
 }
 .search span {
-  color: #0918e9;
+  color: #4f93e3;
+  text-align: center;
 }
 .search input {
   box-sizing: border-box;
   padding-left: 35px;
   background-color: whitesmoke; 
-  border: 1px solid #5d5b8d;
+  /* border: 1px solid black; */
+  border: none !important;
   border-radius: 25px;
   font-size: 14px;
   height: 40px;
   width: 100%;
   font-weight: 500;
-  color: #5d5b8d;
+  color: black;
   outline: none;
 }
 .search input::placeholder {
@@ -211,12 +235,12 @@ font-weight: 500;
 .chats .container {
 
   align-items: center;
-  border-bottom: 1px solid #5d5b8d;
+  border-bottom: 1px solid black;
   background-color: whitesmoke;
   height: 70px;
   padding-top: 5px;
   gap: 25px;
-  color: #5d5b8d;
+  color: black;
   cursor: pointer;
   display: flex;
   justify-content: space-between;     /*  new */
@@ -239,8 +263,8 @@ font-weight: 500;
 .userChatInfo span {
   font-family: "Prata", serif;
   font-size: 18px;
-  font-weight: 500;
-  color: #5d5b8d;
+  font-weight: 600;
+  color: black;
   opacity: 1;
 }
 .userChatInfo p {
@@ -249,7 +273,7 @@ font-weight: 500;
   max-width: 150px;
   max-height: 16px;
   overflow: hidden;
-  color: #5d5b8d;
+  color: black;
 }
 
 /* Navbar of second user */
@@ -282,7 +306,7 @@ font-weight: 500;
 }
 .chatInfo .div span {
   font-size: 22px;
-  color: #5d5b8d;
+  color: black;
 }
 .chatInfo .chatIcons {
   gap: 50px;
@@ -319,7 +343,7 @@ font-weight: 500;
   object-fit: cover;
 }
 .message .messageInfo span {
-  color: #5d5b8d;
+  color: black;
   font-weight: 400;
 }
 .message .messageContent {
@@ -332,16 +356,23 @@ font-weight: 500;
   max-width: 300px !important;
   overflow: hidden;
   height:auto !important;
-  background-color:whitesmoke ;
+  background-color:white ;
   margin-top: 30px;
-  font-size: 2vmin;
+  font-size: 20px;
   padding: 10px 20px;
-  border-radius: 10px 0px 20px 10px;
-    max-width: max-content;
+  border-radius: 0px 10px 10px 20px;
+  max-width: max-content;
 }
 
 .message .messageContent img {
   width: 50%;
+  border: 2px solid white;
+  border-radius:0px 10px 10px 10px;
+}
+.owner .messageContent img {
+  width: 50%;
+  border: 2px solid #4f93e3;
+  border-radius: 10px 0px 10px 10px ;
 }
 
 /*  Second user Chat */
@@ -356,7 +387,7 @@ font-weight: 500;
   max-width: 300px !important;
   overflow: hidden;
   height:auto !important;
-  background-color: #323b58;
+  background-color:  #4f93e3;
   margin-top: 30px;
   color: #ddddf7;
   padding: 10px 20px;
@@ -397,6 +428,7 @@ font-weight: 500;
 }
 .usererror{
   font-size: 3vmin;
+  color: #4f93e3;
 }
 .send .emoji-icon {
   position: fixed;
@@ -463,6 +495,8 @@ font-weight: 500;
   }
   .owner .messageContent p {
     max-width:250px !important ;
+
+
   }
 
   .input input {
@@ -526,6 +560,9 @@ font-weight: 500;
   .input input{
     font-size: 16px;   
    
+  }
+  .message .messageContent p{
+    font-size: 16px;
   }
   
 
@@ -609,6 +646,12 @@ display: flex;
   }
   .messages{
     margin-bottom: 80px;
+  }
+  .message .messageContent p{
+    font-size: 13px;
+  }
+  .usererror{
+    font-size: 14px!important;
   }
 
 }

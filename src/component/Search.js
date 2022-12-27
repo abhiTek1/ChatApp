@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { GoArrowRight} from "react-icons/go";
 import {
   collection,
   query,
@@ -120,7 +121,8 @@ const Search = () => {
           onChange={(e) => setUsername(e.target.value)}
           value={username}
         />
-        <img className="-pl-5" src="https://icons.getbootstrap.com/assets/icons/arrow-right-square-fill.svg"alt ="dfd" onClick={handleSearch} />
+        <GoArrowRight onClick={handleSearch} className="go"/>
+        {/* <img className="-pl-5" src="https://icons.getbootstrap.com/assets/icons/arrow-right-square-fill.svg"alt ="dfd" onClick={handleSearch} /> */}
 
        
       </div>

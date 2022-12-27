@@ -395,6 +395,9 @@ font-weight: 500;
   top: 200px;
   right: 300px;
 }
+.usererror{
+  font-size: 3vmin;
+}
 .send .emoji-icon {
   position: fixed;
   cursor: pointer;

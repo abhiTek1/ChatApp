@@ -16,27 +16,57 @@ const Search = () => {
   const [username, setUsername] = useState("");
   const [user, setUser] = useState(null);
   const [err, setErr] = useState("");
+  const [res,setres]=useState(true)
   
 
   const { currentUser } = useContext(AuthContext);
   
 
   const handleSearch = async () => {
-     
-   
+    var res=0;
+    const q = query(
+      collection(db, "users"),
+      where("displayName", "==", username)
+    )
+    setErr("")
+  //  if(q)
+  //  {
+  //   console.log(q)
+  //   const querySnapshot = await getDocs(q);
+  //   console.log(querySnapshot)
+  //   querySnapshot.forEach((doc) => {
+  //     setUser(doc.data());
+  //   }); 
+  //   console.log(user)
+
+  //  }
+  //  else{
+  //   console.log("rerer")
+  //  }
     try {
-      const q = query(
-        collection(db, "users"),
-        where("displayName", "==", username)
-      )
+      
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         setUser(doc.data());
+        res=Object.keys(user).length
+        console.log(res)
+        
       }); 
-    } catch (err) {
-      setErr("dfndfdkdmd");
-      console.log("user not found")
+     
+     
+      
     }
+     catch (error) {
+      setErr("dfdfd")
+     
+      
+    }
+    if(res===0)
+    {
+      console.log("fdfd")
+      setErr("User not Exist")
+    }
+    
   };
 
   const handleKey = (e) => {
@@ -82,7 +112,7 @@ const Search = () => {
   };
   return (
     <div className="search sticky-top">
-      <div className="searchForm">
+      <div className="searchForm d-flex">
         <input
           type="text"
           placeholder="Find a user"
@@ -90,9 +120,11 @@ const Search = () => {
           onChange={(e) => setUsername(e.target.value)}
           value={username}
         />
+        <img className="-pl-5" src="https://icons.getbootstrap.com/assets/icons/arrow-right-square-fill.svg"alt ="dfd" onClick={handleSearch} />
+
        
       </div>
-       <span>{err}</span>
+       <span className="p-5 usererror">{err}</span>
       {user && (
         <div className="userChat" onClick={handleSelect}>
           <img src={user.photoURL} alt="userimg" />

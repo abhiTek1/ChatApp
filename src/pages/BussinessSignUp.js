@@ -140,7 +140,7 @@ function SignUp() {
                   placeholder="Enter password"
                 ></input>
               </div>
-              <div className="filesignup ">
+              <div className="filesignup  my-3 ">
                 <input  className=""
                   
                   // style={{ display: "none" }}
@@ -154,7 +154,7 @@ function SignUp() {
                   
                   />
                 <br />
-                <label htmlFor="file" className="my-3 Avatar">
+                <label htmlFor="file" className="mt-3 avatar-box">
                   {/* <img  className="av-img"src={Add} alt="" /> */}
                   <span>Add an Avatar</span>
                 </label>

@@ -5,7 +5,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { db } from "../Firebase";
 import Input from "./Input";
 import Message from "./massage";
-import Cam from "../img/cam.png";
+
 import Add from "../img/add.png";
 import More from "../img/more.png";
 import { Link } from "react-router-dom";
@@ -49,7 +49,7 @@ const Messages = () => {
         </div>
         </div>
         <div className="chatIcons">
-          <img src={Cam} alt="" />
+          {/* <img src={Cam} alt="" /> */}
           <img src={Add} alt="" />
           <img src={More} alt="" />
         </div>

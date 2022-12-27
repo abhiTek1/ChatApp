@@ -15,25 +15,27 @@ import { AuthContext } from "../context/AuthContext";
 const Search = () => {
   const [username, setUsername] = useState("");
   const [user, setUser] = useState(null);
-  const [err, setErr] = useState(false);
+  const [err, setErr] = useState("");
   
 
   const { currentUser } = useContext(AuthContext);
+  
 
   const handleSearch = async () => {
      
-    const q = query(
-      collection(db, "users"),
-      where("displayName", "==", username)
-    )
+   
     try {
+      const q = query(
+        collection(db, "users"),
+        where("displayName", "==", username)
+      )
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         setUser(doc.data());
       }); 
     } catch (err) {
-      setErr(true);
-      alert("user not found")
+      setErr("dfndfdkdmd");
+      console.log("user not found")
     }
   };
 
@@ -90,10 +92,10 @@ const Search = () => {
         />
        
       </div>
-      {err && <span>User not found!</span>}
+       <span>{err}</span>
       {user && (
         <div className="userChat" onClick={handleSelect}>
-          <img src={user.photoURL} alt="" />
+          <img src={user.photoURL} alt="userimg" />
           <div className="userChatInfo">
             <span>{user.displayName}</span>
           </div>

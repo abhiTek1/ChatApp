@@ -130,7 +130,9 @@ html {
 
 }
 .my-3 .Avatar {
-  display: block;
+  /* display: block; */
+
+
 }
 .signup-btn {
   margin-top: 30px;
@@ -154,6 +156,7 @@ html {
   font-size: 20px;
   font-weight: 600;
   padding-left: 8px;
+  
 
 }
 .av-img{
@@ -252,6 +255,10 @@ form p {
     width: 420px;
   
   }
+  .my-3{
+    margin-left: 93px;
+  }
+
   .h1-head{
     font-size: 40px !important;
 
@@ -287,7 +294,13 @@ form p {
     width: 360px;
 
   }
-
+  /* .avatar-box{
+    max-width: 350px;
+    text-align: center;
+  } */
+.my-3{
+  margin-left: 93px;
+}
   .line{
     display: none;
   }
@@ -344,6 +357,9 @@ form p {
   .SignUp-header {
     flex-direction: column;
   }
+  /* .avatar-box{
+    margin-left: 93px;
+  } */
   .line{
     display: none;
   }

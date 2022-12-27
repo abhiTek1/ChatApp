@@ -32,7 +32,7 @@ const Message = ({ message }) => {
         />
       </div>
         
-        <span>{message.date.toDate().toTimeString().slice(0,8)}</span>
+        <span>{message.date.toDate().toTimeString().slice(0,5)}</span>
       </div>
       <div className="messageContent">
         <p>{message.text}</p>

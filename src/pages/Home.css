@@ -183,7 +183,7 @@ font-weight: 500;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #4f93e3;
-  background-color: white;
+  background-color: whitesmoke;
   height: 70px;
   padding-top: 5px;
   gap: 25px;
@@ -229,6 +229,7 @@ font-weight: 500;
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
+  padding-bottom: 5px;
 }
 .userChatInfo {
   text-align: left;
@@ -403,7 +404,8 @@ font-weight: 500;
 .input .send {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
+  margin:0 8px;
 }
 .input .send img {
   height: 30px;

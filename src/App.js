@@ -6,7 +6,7 @@ import { HashRouter, Route, Routes,Navigate  } from 'react-router-dom';
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import LandingPage from './pages/LandingPage';
-import './App.css';
+
 import Messages from './component/Massages';
 
 function App() {

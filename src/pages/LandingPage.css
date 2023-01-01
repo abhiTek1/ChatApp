@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+body {
+  background-color: #eaeefd;
+  /* background-color:whitesmoke; */
+
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  padding-top: 35px;
+  padding-left: 25px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.wave-container {
+  display: flex;
+  height: 60px;
+  width: 120px;
+  margin-right: 20px;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+.wave {
+  width: 10px;
+  height: 2px;
+  border-radius: 10px;
+  animation: load 1.6s ease-in-out infinite;
+}
+
+@keyframes load {
+  0%,
+  100% {
+    height: 2px;
+  }
+  50% {
+    height: 100%;
+  }
+}
+
+.wave-container .wave:nth-child(1) {
+  background: #e9093d;
+  animation-delay: 1.2s;
+}
+.wave-container .wave:nth-child(2) {
+  background: #e9099e;
+  animation-delay: 1s;
+}
+.wave-container .wave:nth-child(3) {
+  background: #e98809;
+  animation-delay: 0.8s;
+}
+.wave-container .wave:nth-child(4) {
+  background: #d3e909;
+  animation-delay: 0.6s;
+}
+.wave-container .wave:nth-child(5) {
+  background: #0918e9;
+  animation-delay: 0.4s;
+}
+.wave-container .wave:nth-child(6) {
+  background: rgb(67, 59, 59);
+  animation-delay: 0.2s;
+}
+
+.lg-text {
+  color: #0918e9;
+  font-family: "Prata", serif;
+  font-size: 40px;
+  font-weight: bolder;
+  margin: 0;
+}
+.lg-slogan {
+  font-family: "Bebas Neue", cursive;
+  color: #0918e9;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: left;
+  line-height: 0%;
+  letter-spacing: 2px;
+  padding-top: 10px;
+  margin: 0;
+}
+.nav-btn {
+  padding: 10px 40px;
+  font-size: 20px;
+  color: whitesmoke;
+  font-weight: 600;
+  background:#0918e9;
+  box-shadow: 0 8px 8px 0 #0918e9;
+  border-radius: 30px;
+  border: 1px solid #0918e9;
+}
+.nav-btn:hover{
+  color: #eaeefd;
+}
+.down-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+}
+.left-div,
+.right-div {
+  flex: 1;
+  padding: 35px;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-img {
+  animation: animation 1.6s ease-in-out 3s infinite alternate-reverse both;
+  background-color:transparent;
+  animation-delay: 2s;
+  max-width: 500px;
+}
+
+@keyframes animation {
+  0% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(-6 px);
+  }
+}
+.para {
+  padding: 25px;
+}
+.para p {
+    margin-top: 60px;
+  max-width: 600px;
+  margin-bottom: 55px;
+  font-weight: 400;
+  font-family: "Satisfy", cursive;
+  font-size: 22px;
+  line-height: 0.8cm;
+  text-align: left;
+}
+.start-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 35px;
+}
+
+/* media quroes for responsive */
+
+@media screen and (max-width: 1150px) {
+  .para p {
+    font-size: 18px;
+    padding-top: 65px;
+  }
+  .lg-text {
+    font-size: 30px;
+  }
+  .lg-slogan {
+    font-size: 15px;
+  }
+  .home-img {
+    width: 400px;
+  }
+  .wave-container {
+    height: 40px;
+    width: 100px;
+  }
+  .wave {
+    width: 8px;
+    padding: 0;
+  }
+  .nav-btn {
+    font-size: 18px;
+    padding: 10px 35px;
+  }
+}
+@media screen and (max-width: 905px) {
+  .para p {
+    font-size: 15px;
+    padding-top: 65px;
+    line-height: 0.7cm;
+  }
+  .lg-text {
+    font-size: 30px;
+    text-align: left;
+  }
+  .lg-slogan {
+    font-size: 12px;
+  }
+  .home-img {
+    width: 320px;
+  }
+  .wave-container {
+    height: 40px;
+    width: 90px;
+  }
+  .wave {
+    width: 6px;
+    padding: 0;
+  }
+  .nav-btn {
+    font-size: 17px;
+    padding: 10px 30px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .para p {
+    font-size: 16px;
+    padding-top: 15px;
+    line-height: 0.7cm;
+  }
+  .down-wrapper {
+    flex-direction: column-reverse;
+  }
+  .home-img {
+    width: 400px;
+    padding-top: 15px;
+  }
+  .left-div,
+  .right-div {
+    padding: 0;
+    justify-content: center;
+  }
+  .para {
+    padding: 0 25px;
+  }
+  .wave-container {
+    height: 35px;
+    width: 80px;
+  }
+  .wave {
+    width: 7px;
+    padding: 0;
+  }
+  .nav-btn {
+    font-size: 17px;
+    padding: 10px 30px;
+  }
+  .nav-btn {
+    font-size: 16px;
+    padding: 10px 30px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .home-img {
+    width: 300px;
+    padding-top: 15px;
+  }
+  .down-wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .lg-text {
+    font-size: 25px;
+    text-align: left;
+  }
+  .lg-slogan {
+    font-size: 12px;
+  }
+  .left-div,
+  .right-div {
+    padding: 0;
+    justify-content: center;
+  }
+  .wave-container {
+    height: 35px;
+    width: 70px;
+  }
+  .wave {
+    width: 5px;
+    padding: 0;
+  }
+  .para p {
+    font-size: 15px;
+    line-height: 0.6cm;
+    padding-top: 0;
+  }
+  .nav-btn {
+    font-size: 14px;
+    padding: 10px 30px;
+  }
+}
+@media screen and (min-width: 240px) and (max-width: 320px) {
+  .home-img {
+    width: 200px;
+    padding-top: 15px;
+  }
+  .down-wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .lg-text {
+    font-size: 15px;
+    text-align: left;
+  }
+  .lg-slogan {
+    font-size: 8px;
+  }
+  .left-div,
+  .right-div {
+    padding: 0;
+    justify-content: center;
+  }
+  .wave-container {
+    height: 30px;
+    width: 50px;
+  }
+  .wave {
+    width: 3px;
+    border-radius: 10px;
+  }
+  .para p {
+    font-size: 12px;
+    line-height: 0.4cm;
+    padding-top: 0;
+  }
+  .nav-btn {
+    font-size: 12px;
+    padding: 8px 25px;
+  }
+}

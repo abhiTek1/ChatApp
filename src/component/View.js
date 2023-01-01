@@ -1,0 +1,17 @@
+import { React } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+
+const View = () =>{
+    const { currentUser } = useContext(AuthContext);
+return(
+    <div className="View">
+        <div className="container">
+            <img src={currentUser.photoURL} alt=''/>
+            <span> {currentUser.displayName}</span>
+            <p> Email : {currentUser.email} </p>
+        </div>
+    </div>
+)
+}
+export default View;
